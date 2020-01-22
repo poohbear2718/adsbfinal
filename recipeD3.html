@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Apple Crisp</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://static01.nyt.com/images/2019/10/19/dining/18COOKING-APPLECRISP2/18COOKING-APPLECRISP2-articleLarge-v2.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Apple Crisp</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 280 <br>
+Fat: 11.6 g <br>
+Carbohydrate: 43.9 g<br>
+Protein: 3.4 g <br>
+Cholesterol: 20 mg <br>
+Sodium: 95 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 30 minutes | Cook Time: 45 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">12</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+
+        <div id = "ingr">
+
+10 cups sliced apples<br>--------------------------------------------------------------------------------<br>
+1/2 cup white sugar<br>--------------------------------------------------------------------------------<br>
+1 tablespoon whole wheat flour<br>--------------------------------------------------------------------------------<br>
+1 teaspoon ground cinnamon<br>--------------------------------------------------------------------------------<br>
+1/2 cup water<br>--------------------------------------------------------------------------------<br>
+1 cup quick cooking oats<br>--------------------------------------------------------------------------------<br>
+1 cup whole wheat flour<br>--------------------------------------------------------------------------------<br>
+1/2 cup packed brown sugar<br>--------------------------------------------------------------------------------<br>
+1/2 cup chopped walnuts<br>--------------------------------------------------------------------------------<br>
+1/4 teaspoon baking powder<br>--------------------------------------------------------------------------------<br>
+1/4 teaspoon baking soda<br>--------------------------------------------------------------------------------<br>
+1/2 cup butter, melted
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Preheat oven to 350 degrees F (175 degree C).
+
+      <h4>Step 2</h4>
+      Place the sliced apples in a 9x13 inch pan. Mix the white sugar, 1 tablespoon flour and ground cinnamon together, and sprinkle over apples. Pour water evenly over all.
+
+      <h4>Step 3</h4>
+      Combine the oats, 1 cup flour, brown sugar, baking powder, baking soda, walnuts and melted butter together. Crumble evenly over the apple mixture.
+
+      <h4>Step 4</h4>
+      Bake at 350 degrees F (175 degrees C) for about 45 minutes.
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -250px;
+}
+h2 span {
+  margin-left: -250px;
+}
+
+.box {
+  margin-left: 915px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 10;
+  var b = 1/2;
+  var c = 1;
+  var d = 1;
+  var e = 1/2
+  var f =1
+  var g =1
+  var h =1/2
+  var i =1/2
+  var j =1/4
+  var k =1/4
+  var l = 1/2
+
+  var val = document.getElementById('txt').value;
+a = (a / (12 / val)).toFixed(2);
+b = (b/ (12/val)).toFixed(2);
+c = (c/ (12/val)).toFixed(2);
+d = (d / (12 / val)).toFixed(2);
+f = (f/ (12/val)).toFixed(2);
+e = (e/ (12/val)).toFixed(2);
+g = (g / (12 / val)).toFixed(2);
+h = (h/ (12/val)).toFixed(2);
+i = (i/ (12/val)).toFixed(2);
+j = (j / (12 / val)).toFixed(2);
+k = (k/ (12/val)).toFixed(2);
+l = (l/ (12/val)).toFixed(2);
+
+  document.getElementById("ingr").innerHTML = a + "cups sliced apples<br>--------------------------------------------------------------------------------<br>"
++ b +  " cup white sugar<br>--------------------------------------------------------------------------------<br>"
+  + c +" tablespoon whole wheat flour<br>--------------------------------------------------------------------------------<br>"
+  + d +" teaspoon ground cinnamon<br>--------------------------------------------------------------------------------<br>"
+  + e +" cup water<br>--------------------------------------------------------------------------------<br>"
+  + f +" cup quick cooking oats<br>--------------------------------------------------------------------------------<br>"
+  + g +" cup whole wheat flour<br>--------------------------------------------------------------------------------<br>"
+  + h +" cup packed brown sugar<br>--------------------------------------------------------------------------------<br>"
+  + i +" cup chopped walnuts<br>--------------------------------------------------------------------------------<br>"
+  + j +" teaspoon baking powder<br>--------------------------------------------------------------------------------<br>"
+  + k +" teaspoon baking soda<br>--------------------------------------------------------------------------------<br>"
+  + l +" cup butter, melted"
+
+
+}
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(23)) {
+  s.push(23);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

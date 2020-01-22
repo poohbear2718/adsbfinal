@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Yakisoba Chicken</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://images.media-allrecipes.com/userphotos/2220105.jpg" alt = "Image" height="auto" width="375">
+  <h2><span>Yakisoba Chicken</span></h2> </center>
+</div>
+<div class = "box">
+
+
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+
+<b>Nutrition Facts</b>
+Calories: 295 <br>
+Carbohydrate: 40.7 g <br>
+Cholesterol: 46 mg  <br>
+Fat: 4.8 g<br>
+Protein: 26.3 g<br>
+Sodium: 1621 mg
+
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 15 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">6</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+
+<p1>
+  <div id = "ingr">
+1/2 teaspoon sesame oil<br>--------------------------------------------------------------------------------<br>
+1 tablespoon canola oil<br>--------------------------------------------------------------------------------<br>
+2 tablespoons chile paste<br>--------------------------------------------------------------------------------<br>
+2 cloves garlic, chopped<br>--------------------------------------------------------------------------------<br>
+4 skinless, boneless chicken breast halves<br>--------------------------------------------------------------------------------<br>
+1/2 cup soy sauce<br>--------------------------------------------------------------------------------<br>
+1 onion, sliced lengthwise into eighths<br>--------------------------------------------------------------------------------<br>
+1/2 medium head cabbage, coarsely chopped<br>--------------------------------------------------------------------------------<br>
+2 carrots, coarsely chopped<br>--------------------------------------------------------------------------------<br>
+8 ounces soba noodles, cooked and drained
+</div>
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      In a large skillet combine sesame oil, canola oil and chili paste; stir-fry 30 seconds. Add garlic and stir fry an additional 30 seconds. Add chicken and 1/4 cup of the soy sauce and stir fry until chicken is no longer pink, about 5 minutes. Remove mixture from pan, set aside, and keep warm.
+
+      <h4>Step 2</h4>
+      In the emptied pan combine the onion, cabbage, and carrots. Stir-fry until cabbage begins to wilt, 2 to 3 minutes. Stir in the remaining soy sauce, cooked noodles, and the chicken mixture to pan and mix to blend. Serve and enjoy!
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+<style>
+.row {
+  margin-left: -325px;
+}
+.container {
+  margin-left: -100px;
+}
+h2 span {
+  margin-left: -100px;
+}
+.box {
+  margin-left: 905px;
+  margin-top: -380px;
+  height: 375px;
+  padding-left: 15px;
+}
+.column {
+  height: 475px;
+}
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1/2
+  var b = 1
+  var c = 2
+    var d = 2
+  var e = 4
+  var f =1/2
+    var g= 1
+    var h=1/2
+    var i=2
+    var j=8
+
+
+
+
+
+var se = 6
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+i = (i/ (se/val)).toFixed(2);
+j = (j/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " teaspoon sesame oil<br>--------------------------------------------------------------------------------<br>"
+  + b +" tablespoon canola oil<br>--------------------------------------------------------------------------------<br>"
+  + c +" tablespoons chile paste<br>--------------------------------------------------------------------------------<br>"
+  + d +" cloves garlic, chopped<br>--------------------------------------------------------------------------------<br>"
+  + e +" skinless, boneless chicken breast halves - cut into 1 inch cubes<br>--------------------------------------------------------------------------------<br>"
+  + f +" cup soy sauce<br>--------------------------------------------------------------------------------<br>"
+  + g +" onion, sliced lengthwise into eighths<br>--------------------------------------------------------------------------------<br>"
+  + h +" medium head cabbage, coarsely chopped<br>--------------------------------------------------------------------------------<br>"
+  + i +" carrots, coarsely chopped<br>--------------------------------------------------------------------------------<br>"
+  + j +" ounces soba noodles, cooked and drained"
+}
+
+function myFunction() {
+
+  document.getElementById('im').src = "redheart.png";
+
+  var s = [];
+  s = localStorage.getItem('arr') || [];
+
+if (!s.includes(2)) {
+  s.push(2);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

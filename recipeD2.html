@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Strawberry Sorbet</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://elanaspantry.com/wp-content/uploads/2009/08/strawberry-sorbet.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Strawberry Sorbet</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 140 <br>
+Carbohydrate: 35.6 g<br>
+Cholesterol: 0 mg <br>
+Fat: 0.3 g<br>
+Protein: 0.8 g<br>
+Sodium: 1 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 5 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea></p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+        1 pound ripe strawberries<br>--------------------------------------------------------------------------------<br>
+        1/2 cup white sugar<br>--------------------------------------------------------------------------------<br>
+        1 pinch salt<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons cornstarch<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons cold water<br>--------------------------------------------------------------------------------<br>
+        3 tablespoons lemon juice
+      </div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Place berries in the work bowl of a food processor and puree until smooth. Combine berry puree, sugar, and salt in a large saucepan. Heat until melted and just simmering. Whisk cornstarch into the cold water; stir into heated berry mixture. Remove from heat, and stir in lemon juice. Cool slightly. Refrigerate berry mixture until cold, about 2 hours.
+
+      <h4>Step 2</h4>
+      Freeze in ice cream maker according to manufacturer's instructions.
+
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -210px;
+}
+h2 span {
+  margin-left: -210px;
+}
+
+.box {
+  margin-left: 945px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1;
+  var b = 1/2;
+  var c = 1;
+  var d = 3/2;
+  var e = 3/2
+  var f =3
+
+
+  var val = document.getElementById('txt').value;
+a = (a / (4 / val)).toFixed(2);
+b = (b/ (4/val)).toFixed(2);
+c = (c/ (4/val)).toFixed(2);
+d = (d / (4 / val)).toFixed(2);
+e = (e/ (4/val)).toFixed(2);
+f = (f/ (4/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML = a + " pound ripe strawberries<br>--------------------------------------------------------------------------------<br>"
+  + b +" cup white sugar<br>--------------------------------------------------------------------------------<br>"
+  + c +" pinch salt<br>--------------------------------------------------------------------------------<br>"
+  + d +" teaspoons cornstarch<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoons cold water<br>--------------------------------------------------------------------------------<br>"
+  + f +" tablespoons lemon juice"
+
+
+}
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(22)) {
+  s.push(22);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

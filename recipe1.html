@@ -1,0 +1,168 @@
+<!-- Note: All recipe webpages are similar so they have the same documentation as this one. -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Basil-Ricotta Ravioli</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://timeincsecure-a.akamaihd.net/rtmp_uds/429048911/201806/2860/429048911_5798102596001_5798101558001-vs.jpg?pubId=1260616200&videoId=5793422078001" alt = "Image" height="350" width="auto">
+  <h2><span>Basil-Ricotta Ravioli</span></h2> </center>
+
+</div>
+<div class = "box">
+
+  <!-- displays nutrition facts, heart for saving, and button to access saved recipes in a box-->
+
+<img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+<a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 245<br>
+Carbohydrate: 19g<br>
+Cholesterol: 57mg <br>
+Fat: 13.5g <br>
+Fiber: 2g<br>
+Protein: 12g<br>
+Sodium: 499mg<br>
+Sugars: 1g
+
+</div>
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Muli">
+</head>
+
+
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 30 minutes | Cook Time: 15 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea> </p4>
+</div>
+</center>
+
+<!-- two columns that display ingredients and directions side by side -->
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+      3/4 cup whole-milk ricotta cheese<br>--------------------------------------------------------------------------------<br>
+      1 ounce Parmesan cheese, grated and divided<br>--------------------------------------------------------------------------------<br>
+      1/4 cup torn fresh basil, divided<br>--------------------------------------------------------------------------------<br>
+      1/2 teaspoon grated lemon rind<br>--------------------------------------------------------------------------------<br>
+      3/8 teaspoon black pepper, divided<br>--------------------------------------------------------------------------------<br>
+      1/4 teaspoon kosher salt, divided<br>--------------------------------------------------------------------------------<br>
+      16 square wonton wrappers, divided<br>--------------------------------------------------------------------------------<br>
+      1 large egg, lightly beaten<br>--------------------------------------------------------------------------------<br>
+      4 teaspoons extra-virgin olive oil, divided<br>--------------------------------------------------------------------------------<br>
+      3 garlic cloves, sliced<br>--------------------------------------------------------------------------------<br>
+      10 ounces baby spinach<br>--------------------------------------------------------------------------------<br>
+      2 teaspoons fresh lemon juice
+    </div>
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Combine ricotta, 3 tablespoons Parmesan, 2 tablespoons basil, rind, 1/8 teaspoon pepper, and 1/8 teaspoon salt in a bowl. Arrange 8 wonton wrappers on a work surface (cover remaining wrappers to prevent drying). Moisten edge of wrappers with egg. Place 1 tablespoon ricotta mixture in center of each wrapper. Fold each wrapper in half, pressing well to seal edge. Cover with a damp towel to prevent drying. Repeat procedure with remaining wonton wrappers, remaining egg, and remaining ricotta mixture.
+
+      <h4>Step 2</h4>
+      Bring a large saucepan filled with water to a boil. Carefully add ravioli to pan; cook 3 minutes, stirring occasionally. Remove ravioli with a slotted spoon.
+
+      <h4>Step 3</h4>
+      Heat 2 teaspoons oil in a large skillet over medium; add garlic, and sauté 2 minutes. Stir in remaining 1/8 teaspoon salt and spinach until wilted. Stir in juice. Divide spinach mixture among 4 plates; top evenly with ravioli, remaining 1 tablespoon Parmesan, remaining 2 tablespoons basil, remaining 1/4 teaspoon pepper, and remaining 2 teaspoons oil.
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+.imag {
+  margin-left: -10%;
+}
+.row {
+  margin-top: 4%;
+}
+
+
+</style>
+
+
+<script type = "text/javascript">
+
+// uses the amounts in the recipe to alter the recipe based on serving size and change the innerHTML
+
+function checkit() {
+
+  var a = 3/4
+  var b = 1
+  var c = 1/4
+    var d = 1/2
+  var e = 3/8
+  var f =1/4
+    var g= 16
+    var h=1
+    var i=4
+    var j=3
+    var k =10
+    var l = 2
+
+var se = 4
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+i = (i/ (se/val)).toFixed(2);
+j = (j/ (se/val)).toFixed(2);
+k = (k/ (se/val)).toFixed(2);
+l = (l/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cup whole-milk ricotta cheese<br>--------------------------------------------------------------------------------<br>"
+  + b +" ounce Parmesan cheese, grated and divided<br>--------------------------------------------------------------------------------<br>"
+  + c +" cup torn fresh basil, divided<br>--------------------------------------------------------------------------------<br>"
+  + d +" teaspoon grated lemon rind<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoon black pepper, divided<br>--------------------------------------------------------------------------------<br>"
+  + f +" teaspoon kosher salt, divided<br>--------------------------------------------------------------------------------<br>"
+  +g+" square wonton wrappers, divided<br>--------------------------------------------------------------------------------<br>"
+  +h+" large egg, lightly beaten<br>--------------------------------------------------------------------------------<br>"
+  +i+" teaspoons extra-virgin olive oil, divided<br>--------------------------------------------------------------------------------<br>"
+  +j+" garlic cloves, sliced<br>--------------------------------------------------------------------------------<br>"
+  +k+" ounces baby spinach<br>--------------------------------------------------------------------------------<br>"
+  +l+" teaspoons fresh lemon juice"
+}
+
+//accesses localStorage in order to make a cumulative array list of all saved recipes
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = localStorage.getItem('arr') || [];
+
+if (!s.includes(1)) {
+  s.push(1);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+</script>
+
+</html>

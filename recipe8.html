@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Sweet Potato & Miso Soup</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://images.immediate.co.uk/production/volatile/sites/2/2019/06/OLI-0519-Healthy_SweetPotatoSoupMisoKale_32198-9b2a991.jpg?quality=45&crop=12px,3473px,5460px,2349px&resize=1220,524" alt = "Image" height="315" width="auto">
+  <h2><span>Sweet Potato & Miso Soup</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 242 <br>
+Carbohydrate: 33.3 g<br>
+Fat: 6 g<br>
+Fiber: 6.8 g<br>
+Protein: 10.1 g<br>
+Sodium: 2.5 g<br>
+Sugars: 13.1 g
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 10 minutes | Cook Time: 35 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">3</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+ 4 tsp vegetable oil<br>--------------------------------------------------------------------------------<br>
+6 spring onions, finely chopped<br>--------------------------------------------------------------------------------<br>
+2 pieces ginger, finely chopped<br>--------------------------------------------------------------------------------<br>
+2 cloves garlic, finely chopped<br>--------------------------------------------------------------------------------<br>
+2 tbsp white miso<br>--------------------------------------------------------------------------------<br>
+500 g sweet potatoes, peeled and cut<br>--------------------------------------------------------------------------------<br>
+750 mL vegetable stock <br>--------------------------------------------------------------------------------<br>
+2 handfuls shredded kale
+</div>
+
+
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Heat 2 tsp of oil in a large lidded pan and gently cook 1/2 the spring onions, ginger and garlic for 5-10 minutes or until soft. Add 1 tbsp of miso, all the sweet potatoes and the vegetable stock, and bring to a simmer. Put on a lid and simmer for 25-30 minutes  or until the sweet potatoes are really soft. Season and whizz with a stick blender until completely smooth. Keep warm.
+      <h4>Step 2</h4>
+      Heat 2 tsp of oil in a frying pan and fry the remaining spring onions, ginger and garlic over a high heat for 2-3 minutes or until softened. Reduce the heat, add the kale and a splash of water, and cook for 2-3 minutes until the kale has wilted. Stir in the remaining miso and season. Spoon the soup into bowls and top with the miso kale, to serve.
+
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-left: -380px;
+  margin-top: 0px;
+}
+.column {
+  height: 450px;
+}
+.container {
+  margin-left: -250px;
+}
+.box {
+  margin-left: 1020px;
+  height: 315px;
+  margin-top: -315px;
+}
+.info {
+  margin-top: -20px;
+}
+
+</style>
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 4
+  var b = 6
+  var c = 2
+  var d = 2
+  var e = 2
+  var f =500
+  var g= 750
+  var h=2
+
+
+var se = 3
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " tsp vegetable oil<br>--------------------------------------------------------------------------------<br>"
++ b +" spring onions, finely chopped<br>--------------------------------------------------------------------------------<br>"
+ + c +" pieces ginger, finely chopped<br>--------------------------------------------------------------------------------<br>"
+ + d +" cloves garlic, finely chopped<br>--------------------------------------------------------------------------------<br>"
+ + e +" tbsp white miso<br>--------------------------------------------------------------------------------<br>"
+ + f +" g sweet potatoes, peeled and cut<br>--------------------------------------------------------------------------------<br>"
+ + g +" mL vegetable stock <br>--------------------------------------------------------------------------------<br>"
+ + h +" handfuls shredded kale"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(8)) {
+  s.push(8);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

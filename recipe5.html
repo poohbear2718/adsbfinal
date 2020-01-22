@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Cannellonni with Quinoa</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://149366112.v2.pressablecdn.com/wp-content/uploads/2016/11/cannelloni-with-quinoa-mushroom-stuffing-c-1200x750.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Cannellonni with Quinoa</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 316 <br>
+Carbs: 31 g<br>
+Fat: 10 g<br>
+Protein: 8 g<br>
+Sodium: 375 g<br>
+Sugar: 4 g
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 20 minutes | Cook Time: 20 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">6</textarea></p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+3/4 cup uncooked quinoa<br>--------------------------------------------------------------------------------<br>
+12 gluten-free cannelloni<br>--------------------------------------------------------------------------------<br>
+8 ounces mushrooms<br>--------------------------------------------------------------------------------<br>
+1 zucchini<br>--------------------------------------------------------------------------------<br>
+1 8-ounce can diced tomatoes<br>--------------------------------------------------------------------------------<br>
+1 tablespoon olive oil<br>--------------------------------------------------------------------------------<br>
+2 garlic cloves pressed/minced<br>--------------------------------------------------------------------------------<br>
+4 ounces vegan cheese shreds, for topping<br>--------------------------------------------------------------------------------<br>
+A splash of balsamic vinegar <br>--------------------------------------------------------------------------------<br>
+Salt and pepper to taste
+
+</div>
+
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Preheat oven to 390°F
+
+      <h4>Step 2</h4>
+      Cook the quinoa according to the manufacturer's instructions.
+
+      <h4>Step 3</h4>
+      In the meantime, finely chop the mushrooms and zucchini. Heat the olive oil in a saucepan and sauté the vegetables until soft. Season with garlic, salt, and pepper.
+
+      <h4>Step 4</h4>
+      Mix the sautéed vegetables with the cooked quinoa. Fill the cannelloni with the mixture and transfer to a casserole dish.
+
+      <h4>Step 5</h4>
+      Season the tomato dices with salt and pepper, and a splash of balsamic vinegar. Pour over the cannelloni and cover with vegan cheese.
+
+      <h4>Step 6</h4>
+      Bake in the oven for 20 minutes.
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+<style>
+.row {
+  margin-left: -350px;
+  margin-top: 30px;
+}
+.column {
+  height: 650px;
+}
+.container {
+  margin-left: -150px;
+}
+h2 span {
+  margin-left: -150px;
+}
+.box {
+  margin-left: 975px;
+
+}
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 3/4
+  var b = 12
+  var c = 8
+  var d = 1
+  var e = 1
+  var f =1
+    var g= 2
+  var h=4
+
+
+
+var se = 6
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cup uncooked quinoa<br>--------------------------------------------------------------------------------<br>"
+  + b +" gluten-free cannelloni<br>--------------------------------------------------------------------------------<br>"
+  + c +" ounces mushrooms<br>--------------------------------------------------------------------------------<br>"
+  + d +" zucchini<br>--------------------------------------------------------------------------------<br>"
+  + e +" 8-ounce can diced tomatoes<br>--------------------------------------------------------------------------------<br>"
+  + f +" tablespoon olive oil<br>--------------------------------------------------------------------------------<br>"
+  + g +" garlic cloves pressed/minced<br>--------------------------------------------------------------------------------<br>"
+  + h +" ounces vegan cheese shreds, for topping<br>--------------------------------------------------------------------------------<br>A splash of balsamic vinegar <br>--------------------------------------------------------------------------------<br>Salt and pepper to taste"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(5)) {
+  s.push(5);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

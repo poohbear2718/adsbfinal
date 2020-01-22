@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>French Toast</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://cdn-image.realsimple.com/sites/default/files/styles/marquee_large_2x/public/1558554613/french-toast-recipe.jpg?itok=UfwyfbZ4" alt = "Image" height="350" width="auto">
+  <h2><span>French Toast</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 123 <br>
+Carbohydrate: 19.4 g<br>
+Cholesterol: 48 mg <br>
+Fat: 2.7 g <br>
+Protein: 4.8 g <br>
+Sodium: 230 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 10 minutes | Cook Time: 20 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">12</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+1/4 cup all-purpose flour<br>--------------------------------------------------------------------------------<br>
+1 cup milk<br>--------------------------------------------------------------------------------<br>
+1 pinch salt<br>--------------------------------------------------------------------------------<br>
+3 eggs<br>--------------------------------------------------------------------------------<br>
+1/2 teaspoon ground cinnamon<br>--------------------------------------------------------------------------------<br>
+1 teaspoon vanilla extract<br>--------------------------------------------------------------------------------<br>
+1 tablespoon white sugar<br>--------------------------------------------------------------------------------<br>
+12 thick slices bread
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Measure flour into a large mixing bowl. Slowly whisk in the milk. Whisk in the salt, eggs, cinnamon, vanilla extract and sugar until smooth.
+
+      <h4>Step 2</h4>
+      Heat a lightly oiled griddle or frying pan over medium heat.
+
+      <h4>Step 3</h4>
+      Soak bread slices in mixture until saturated. Cook bread on each side until golden brown. Serve hot.
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -190px;
+}
+h2 span {
+  margin-left: -190px;
+}
+
+.box {
+  margin-left: 990px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1/4
+  var b = 1;
+  var c = 1
+  var d = 3;
+  var e = 1/2
+  var f =1
+  var g =1
+  var h = 12
+
+
+var se = 12;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h / (se / val)).toFixed(2);
+
+
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cup all-purpose flour<br>--------------------------------------------------------------------------------<br>"
+  + b + " cup milk<br>--------------------------------------------------------------------------------<br>"
+  + c +" pinch salt<br>--------------------------------------------------------------------------------<br>"
+  + d +" eggs<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoon ground cinnamon<br>--------------------------------------------------------------------------------<br>"
+  + f +" tablespoon white sugar<br>--------------------------------------------------------------------------------<br>"
+  + g +" teaspoon vanilla extract<br>--------------------------------------------------------------------------------<br>"
+  + h +" thick slices bread"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(16)) {
+  s.push(16);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

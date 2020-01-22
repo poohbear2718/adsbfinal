@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Muli">
+  <style>
+  /* stylizing the webpage and formatting the images */
+
+.indv {
+  left: 88%;
+  position: relative;
+  font-family: "Muli";
+  font-size: 25px;
+
+}
+
+select {
+  background-color: #f3f0ff;
+  padding: 5px 5px 5px 5px;
+  font-family: "Muli";
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+
+  body {
+    background-color: #ebffff;
+  }
+
+  div.gallery {
+
+    margin: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 300px;
+    text-align: center;
+    background-color: #fefaff;
+    font-family: "Muli";
+    font-size: 20px;
+  }
+
+  div.gallery:hover {
+    border: 1px solid #bfc5ff;
+  }
+
+
+  </style>
+  <!-- sorting options + where images will go using a dropdown select menu and div classes -->
+
+
+
+    <div class="indv" style="width:200px;">
+
+    <select id = "search" onchange = "change()">
+    <option value="sorted">Random</option>
+    <option value="prep">Prep Time</option>
+    <option value="cook">Cook Time</option>
+    <option value="total">Total Time</option>
+    <option value="ingredients"># of Ingredients</option>
+    <option value="calories">Calories</option>
+
+  </select>
+</div>
+  </head>
+  <body >
+<div class = "wrapper">
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+
+
+</div>
+
+
+  </body>
+
+<script>
+
+
+//dietary needs that work per each recipe in array format
+
+var works = [];
+var needs = JSON.parse(localStorage.myArray);
+recipe1Bad = ["glutenFree", "derm", "ibs", "diabetes", "hypogylcemia", "heart", "hyponatremia", "wheat"]
+recipe2Bad = ["diabetes", "hypoglycemia", "heart"]
+recipe3Bad = ["diabetes", "parkinsons", "hbp", "hypoglycemia", "heart", "hyponatremia", "glutenFree", "derm", "ibs", "wheat"]
+recipe4Bad = ["vegan", "diabetes", "hypoglycemia", "heart", "hyponatremia", "milk", "wheat"]
+recipe5Bad = ["diabetes", "hypoglycemia", "heart", "hyponatremia", "milk"]
+recipe6Bad = ["vegan", "glutenFree", "derm", "ibs", "wheat", "diabetes", "kidney", "hypoglycemia", "lowchol", "anemia", "heart", "hyponatremia", "wheat", "milk"]
+recipe7Bad = ["hyponatremia"]
+
+//identifying which recipes work for which needs by looping through an array
+
+
+var recipe1 = true;
+for (i=0; i < needs.length; i++) {
+  if (recipe1Bad.includes(needs[i]))
+    recipe1 = false;
+}
+if (recipe1 == true)
+  works.push(1);
+
+
+var recipe2 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe2Bad.includes(needs[i]))
+  recipe2 = false;
+}
+if (recipe2 == true)
+works.push(2);
+
+
+var recipe3 = true;
+for (i=0; i < needs.length; i++) {
+  if (recipe3Bad.includes(needs[i]))
+    recipe3 = false;
+}
+if (recipe3 == true)
+  works.push(3);
+
+var recipe4 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe4Bad.includes(needs[i]))
+  recipe4 = false;
+}
+if (recipe4 == true)
+works.push(4);
+
+
+var recipe5 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe5Bad.includes(needs[i]))
+recipe5 = false;
+}
+if (recipe5 == true)
+works.push(5);
+
+var recipe6 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe6Bad.includes(needs[i]))
+recipe6 = false;
+}
+if (recipe6 == true)
+works.push(6);
+
+var recipe7 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe7Bad.includes(needs[i]))
+recipe7 = false;
+}
+if (recipe7 == true)
+works.push(7);
+//arrays that hold the urls, links, and descriptions for accessibility
+
+
+  var imgUrls=[
+  'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/9/3/0/FNK_the-best-vanilla-cupcake_H_s4x3.jpg.rend.hgtvcom.826.620.suffix/1567536807173.jpeg',
+'https://www.aheadofthyme.com/wp-content/uploads/2018/08/3-ingredient-strawberry-sorbet.jpg',
+'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/9/2/0/applcrisp_372.jpg.rend.hgtvcom.616.462.suffix/1392861678148.jpeg',
+'https://i.ytimg.com/vi/zF0j1fGWwp0/maxresdefault.jpg',
+'https://cdn.shopify.com/s/files/1/2467/6001/products/20170425_111840_2048x.jpg?v=1509488159',
+'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2007/2/16/0/ry0401_carrotcake.jpg.rend.hgtvcom.826.620.suffix/1552488933139.jpeg',
+'https://thepioneerwoman.com/wp-content/uploads/2016/04/how-to-make-chocolate-pudding-00a.jpg?fit=2000%2C1335' ];
+
+  var recipeArray = ['recipeD1.html', "recipeD2.html", "recipeD3.html", "recipeD4.html", "recipeD5.html", "recipeD6.html", "recipeD7.html"]
+  var descArray = ["Vanilla Cupcakes", "Strawberry Sorbet", "Apple Crisp", "Brownies", "Chocolate-Covered Strawberries", "Carrot Cake", "Chocolate Pudding"];
+
+
+  //uses DOM to create new elements and place them in the appropriate div classes that were made with HTML using the above arrays for information
+
+  var imgParents=document.getElementsByName("gallery");
+    var imgParentals = document.getElementsByName("desc");
+
+    for(i=0;i<works.length;i++){
+        var a = document.createElement('a');
+        var img = document.createElement("IMG");
+        a.setAttribute('href', recipeArray[works[i]-1]);
+        img.setAttribute('src', imgUrls[works[i]-1]);
+        img.setAttribute('width', '300');
+        img.setAttribute('height', '225');
+        a.appendChild(img);
+        var desc = document.createElement("P");
+        desc.innerText = descArray[works[i]-1];
+        imgParents[i].appendChild(desc);
+        imgParentals[i].appendChild(a);
+
+      }
+
+      for (i=works.length; i < 15; i++) {
+        imgParents[i].style.visibility = "hidden";
+        imgParentals[i].style.visibility = "hidden";
+      }
+
+
+
+
+
+function change() {
+
+
+
+
+ if(document.getElementById('search').value == "prep") {
+
+
+   //uses a 2d array with prep times and loops through this in order to sort it - then adds the times to a sorted array and displays the images using a similar technique as above
+   var prepTimes = [[10, 0], [15, 1], [35, 2], [25, 3], [15, 4], [20, 5], [10, 6]];
+
+      var prep2 = [];
+      for (i=0; i < works.length; i++) {
+        prep2.push(prepTimes[works[i]-1]);
+      }
+      prep2.sort(([a, b], [c, d]) => c - a || b - d);
+      prep2.reverse();
+
+    var arr2 = [];
+    for (y=0; y<prep2.length;y++) {
+      arr2.push(prep2[y][1]);
+    }
+
+
+ var imgParents=document.getElementsByName("gallery");
+  var imgParentals = document.getElementsByName("desc");
+
+
+
+  for(i=0;i<arr2.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr2[i]]);
+      img.setAttribute('src', imgUrls[arr2[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr2[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+  }
+
+
+
+if (document.getElementById('search').value == "cook") {
+
+  //similar techinque to prep times but with cook time
+
+  var cookTimes = [[15, 0], [5, 1], [45, 2], [35, 3], [0, 4], [40, 5], [10, 6]];
+
+  var cook2 = [];
+  for (i=0; i < works.length; i++) {
+    cook2.push(cookTimes[works[i]-1]);
+  }
+  cook2.sort(([a, b], [c, d]) => c - a || b - d);
+  cook2.reverse();
+
+  var arr3 = [];
+  for (y=0; y<cook2.length;y++) {
+  arr3.push(cook2[y][1]);
+  }
+
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+
+  for(i=0;i<arr3.length;i++){
+
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr3[i]]);
+      img.setAttribute('src', imgUrls[arr3[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr3[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+
+}
+
+if (document.getElementById('search').value == "total") {
+
+  //similar techinque to prep times but with total time
+
+
+  var totalTimes = [[25, 0], [140, 1], [80, 2], [60, 3], [15, 4], [60, 5], [50, 6]];
+  var tot2 = [];
+  for (i=0; i < works.length; i++) {
+    tot2.push(totalTimes[works[i]-1]);
+  }
+  tot2.sort(([a, b], [c, d]) => c - a || b - d);
+  tot2.reverse();
+
+
+
+  var arr6 = [];
+  for (y=0; y<tot2.length;y++) {
+  arr6.push(tot2[y][1]);
+  }
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+
+  for(i=0;i<arr6.length;i++){
+
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr6[i]]);
+      img.setAttribute('src', imgUrls[arr6[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr6[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+
+}
+
+
+if (document.getElementById('search').value == "ingredients") {
+
+  //similar techinque to prep times but with ingredients
+
+  var ingredients = [[9, 0], [6, 1], [12, 2], [12, 3], [3, 4], [15, 5], [6, 6]];
+  var ing2 = [];
+  for (i=0; i < works.length; i++) {
+    ing2.push(ingredients[works[i]-1]);
+  }
+  ing2.sort(([a, b], [c, d]) => c - a || b - d);
+  ing2.reverse();
+
+  var arr4 = [];
+  for (y=0; y<ing2.length;y++) {
+  arr4.push(ing2[y][1]);
+  }
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+  for(i=0;i<arr4.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr4[i]]);
+      img.setAttribute('src', imgUrls[arr4[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr4[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+
+if (document.getElementById('search').value == "calories") {
+
+  //similar techinque to prep times but with calories
+
+
+  var calories = [[162, 0], [149, 1], [280, 2], [183, 3], [115, 4], [167, 5], [67, 6]];
+  var cal2 = [];
+  for (i=0; i < works.length; i++) {
+    cal2.push(calories[works[i]-1]);
+  }
+  cal2.sort(([a, b], [c, d]) => c - a || b - d);
+
+  var arr5 = [];
+  for (y=0; y<cal2.length;y++) {
+  arr5.push(cal2[y][1]);
+  }
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+  for(i=0;i<arr5.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr5[i]]);
+      img.setAttribute('src', imgUrls[arr5[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr5[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+
+if (document.getElementById('search').value == "sorted") {
+
+  //similar techinque to prep time but with the "sorted" version (as in what was originally the order)
+
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+  for(i=0;i<works.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[works[i]]);
+      img.setAttribute('src', imgUrls[works[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[works[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+
+if (document.getElementById('search').value == "sorted") {
+  //similar techinque to prep time but with the "sorted" version (as in what was originally the order)
+
+
+  for(i=0;i<works.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[works[i]-1]);
+      img.setAttribute('src', imgUrls[works[i]-1]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[works[i]-1];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+}
+
+
+</script>
+
+
+
+</html>

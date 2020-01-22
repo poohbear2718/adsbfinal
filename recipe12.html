@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Strawberry Spinach Salad</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://ifoodreal.com/wp-content/uploads/2018/03/FG-strawberry-spinach-salad.jpg" alt = "Image" height="auto" width="375">
+  <h2><span>Strawberry Spinach Salad</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 491<br>
+Carbohydrate: 42.9 g<br>
+Cholesterol: 0 mg <br>
+Fat: 35.2 g <br>
+Protein: 6 g<br>
+Sodium: 63 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 75 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+2 tablespoons sesame seeds<br>--------------------------------------------------------------------------------<br>
+1 tablespoon poppy seeds<br>--------------------------------------------------------------------------------<br>
+1/2 cup white sugar<br>--------------------------------------------------------------------------------<br>
+1/2 cup olive oil<br>--------------------------------------------------------------------------------<br>
+1/4 cup distilled white vinegar<br>--------------------------------------------------------------------------------<br>
+1/4 teaspoon paprika<br>--------------------------------------------------------------------------------<br>
+1/4 teaspoon Worcestershire sauce<br>--------------------------------------------------------------------------------<br>
+1 tablespoon minced onion<br>--------------------------------------------------------------------------------<br>
+10 ounces fresh spinach - rinsed, dried, torn<br>--------------------------------------------------------------------------------<br>
+1 quart strawberries, sliced<br>--------------------------------------------------------------------------------<br>
+1/4 cup almonds, blanched
+
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      In a medium bowl, whisk together the sesame seeds, poppy seeds, sugar, olive oil, vinegar, paprika, Worcestershire sauce and onion. Cover, and chill for one hour.
+
+      <h4>Step 2</h4>
+      In a large bowl, combine the spinach, strawberries and almonds. Pour dressing over salad, and toss. Refrigerate 10 to 15 minutes before serving.
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+.row {
+  margin-left: -325px;
+}
+
+h2 span {
+  font-size: 34px;
+  position: relative;
+  top: 40px;
+  margin-left: -150px;
+}
+
+.column {
+  height: 500px;
+}
+
+.container {
+  margin-left: -150px;
+}
+
+.box {
+  margin-left: 900px;
+}
+
+</style>
+
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 2
+  var b = 1
+  var c = 1/2
+  var d = 1/2
+  var e = 1/4
+  var f =1/4
+  var g =1/4
+  var h = 1
+  var i = 10
+  var j = 1
+  var k = 1/4
+
+
+var se = 4;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h / (se / val)).toFixed(2);
+i = (i / (se / val)).toFixed(2);
+j = (j / (se / val)).toFixed(2);
+k = (k / (se / val)).toFixed(2);
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " tablespoons sesame seeds<br>--------------------------------------------------------------------------------<br>"
+  + b + " tablespoon poppy seeds<br>--------------------------------------------------------------------------------<br>"
+  + c +" cup white sugar<br>--------------------------------------------------------------------------------<br>"
+  + d +" cup olive oil<br>--------------------------------------------------------------------------------<br>"
+  + e +" cup distilled white vinegar<br>--------------------------------------------------------------------------------<br>"
+  + f +" teaspoon paprika<br>--------------------------------------------------------------------------------<br>"
+  + g +" teaspoon Worcestershire sauce<br>--------------------------------------------------------------------------------<br>"
+  + h +" tablespoon minced onion<br>--------------------------------------------------------------------------------<br>"
+  + i +" ounces fresh spinach - rinsed, dried, torn<br>--------------------------------------------------------------------------------<br>"
+  + j +" quart strawberries, sliced<br>--------------------------------------------------------------------------------<br>"
+  + k +" cup almonds, blanched"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(12)) {
+  s.push(12);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

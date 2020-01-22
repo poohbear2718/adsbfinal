@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Spinach Quiche</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://assets.marthastewart.com/styles/wmax-750/d35/spinach-and-gruyere-quiches-d103553/spinach-and-gruyere-quiches-d103553_horiz.jpg?itok=-qc5dMoL" alt = "Image" height="350" width="auto">
+  <h2><span>Spinach Quiche</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 613 <br>
+Carbohydrate: 23.9 g<br>
+Cholesterol: 232 mg <br>
+Fat: 48.2 g<br>
+Protein: 22.9 g<br>
+Sodium: 1155 mg
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 20 minutes | Cook Time: 40 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">6</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+        1/2 cup butter<br>--------------------------------------------------------------------------------<br>
+        3 cloves garlic, chopped<br>--------------------------------------------------------------------------------<br>
+        1 small onion, chopped<br>--------------------------------------------------------------------------------<br>
+        1 (4.5 oz) package frozen chopped spinach<br>--------------------------------------------------------------------------------<br>
+        1 (4.5 oz) can mushrooms, drained<br>--------------------------------------------------------------------------------<br>
+        1 (6 oz) package herb and garlic feta, crumbled<br>--------------------------------------------------------------------------------<br>
+        1 (8 oz) package shredded Cheddar cheese<br>--------------------------------------------------------------------------------<br>
+        1 (9 inch) deep dish pie crust<br>--------------------------------------------------------------------------------<br>
+        4 eggs, beaten<br>--------------------------------------------------------------------------------<br>
+        1 cup milk<br>--------------------------------------------------------------------------------<br>
+        salt and pepper to taste
+      </div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Preheat oven to 375 degrees F (190 degrees C).
+
+      <h4>Step 2</h4>
+      In a medium skillet, melt butter over medium heat. Saute garlic and onion in butter until lightly browned, about 7 minutes. Stir in spinach, mushrooms, feta and 1/2 cup Cheddar cheese. Season with salt and pepper. Spoon mixture into pie crust.
+
+      <h4>Step 3</h4>
+      In a medium bowl, whisk together eggs and milk. Season with salt and pepper. Pour into the pastry shell, allowing egg mixture to thoroughly combine with spinach mixture.
+
+  <h4>Step 4</h4>
+  Bake in preheated oven for 15 minutes. Sprinkle top with remaining Cheddar cheese, and bake an additional 35 to 40 minutes, until set in center. Allow to stand 10 minutes before serving.
+
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -190px;
+}
+h2 span {
+  margin-left: -190px;
+}
+
+.box {
+  margin-left: 990px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 600px;
+}
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1/2
+  var b = 3;
+  var c = 1
+  var d = 1;
+  var e = 1
+  var f =1
+  var g =1
+  var h = 1
+  var i = 4;
+  var j = 1
+
+
+var se = 6;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h / (se / val)).toFixed(2);
+i = (i / (se / val)).toFixed(2);
+j = (j / (se / val)).toFixed(2);
+
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cup butter<br>--------------------------------------------------------------------------------<br>"
+  + b + " cloves garlic, chopped<br>--------------------------------------------------------------------------------<br>"
+  + c + " small onion, chopped<br>--------------------------------------------------------------------------------<br>"
+  + d + " (4.5 oz) package frozen chopped spinach<br>--------------------------------------------------------------------------------<br>"
+  + e + " (4.5 oz) can mushrooms, drained<br>--------------------------------------------------------------------------------<br>"
+  + f + " (6 oz) package herb and garlic feta, crumbled<br>--------------------------------------------------------------------------------<br>"
+  + g + " (8 oz) package shredded Cheddar cheese<br>--------------------------------------------------------------------------------<br>"
+  + h + " (9 inch) deep dish pie crust<br>--------------------------------------------------------------------------------<br>"
+  + i + " eggs, beaten<br>--------------------------------------------------------------------------------<br>"
+  + j + " cup milk<br>--------------------------------------------------------------------------------<br>salt and pepper to taste"
+}
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(17)) {
+  s.push(17);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

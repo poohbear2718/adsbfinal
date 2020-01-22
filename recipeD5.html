@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Chocolate-Covered Strawberries</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://cdn.shopify.com/s/files/1/2467/6001/products/20170425_111840_2048x.jpg?v=1509488159" alt = "Image" height="325" width="auto">
+  <h2><span>Chocolate-Covered Strawberries</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 115 <br>
+Fat: 7.3 g<br>
+Carbohydrate: 12.7 g<br>
+Protein: 1.4 g <br>
+Cholesterol: 6 mg <br>
+Sodium: 31 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 25 minutes | Cook Time: 35 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">16</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+16 oz milk chocolate chips<br>--------------------------------------------------------------------------------<br>
+2 tablespoons shortening<br>--------------------------------------------------------------------------------<br>
+1 pound fresh strawberries
+
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      In a double boiler, melt the chocolate and shortening, stirring occasionally until smooth. Holding them by the toothpicks, dip the strawberries into the chocolate mixture.
+
+      <h4>Step 2</h4>
+      Insert toothpicks into the tops of the strawberries.
+
+      <h4>Step 3</h4>
+      Turn the strawberries upside down and insert the toothpick into styrofoam for the chocolate to cool.
+
+      </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 20px;
+}
+
+.container {
+  margin-left: -250px;
+}
+h2 span {
+  margin-left: -250px;
+  font-size: 40px;
+}
+
+.box {
+  margin-left: 945px;
+  padding-left: 15px;
+  height: 325px;
+  margin-top: -325px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 16;
+  var b = 2;
+  var c = 1;
+  var val = document.getElementById('txt').value;
+a = a / (16 / val);
+b = b/ (16/val);
+c = c/ (16/val);
+
+  document.getElementById("ingr").innerHTML = a + " oz milk chocolate chips<br>--------------------------------------------------------------------------------<br>"
+  + b + " tablespoons shortening<br>--------------------------------------------------------------------------------<br>"
+ + c + " pound fresh strawberries";
+
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(25)) {
+  s.push(25);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

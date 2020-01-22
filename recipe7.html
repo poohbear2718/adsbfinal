@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Mongolian Beef</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://thecozyapron.com/wp-content/uploads/2018/05/mongolian-beef_thecozyapron_1.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Mongolian Beef</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 376 <br>
+Carbohydrates: 45g <br>
+Cholesterol: 85mg <br>
+Fat: 16g <br>
+Potassium: 615mg <br>
+Protein: 33g <br>
+Sodium: 1400mg <br>
+Sugars: 27g
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 10 minutes | Cook Time: 20 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+1 1/4 lbs flank steak thinly sliced<br>--------------------------------------------------------------------------------<br>
+4 2/3 tablespoons cornstarch<br>--------------------------------------------------------------------------------<br>
+3 tablespoons vegetable oil<br>--------------------------------------------------------------------------------<br>
+1 1/2 teaspoons minced garlic<br>--------------------------------------------------------------------------------<br>
+1 teaspoon minced ginger<br>--------------------------------------------------------------------------------<br>
+1 teaspoon toasted sesame oil<br>--------------------------------------------------------------------------------<br>
+1/2 cup low sodium soy sauce<br>--------------------------------------------------------------------------------<br>
+1/3 cup water<br>--------------------------------------------------------------------------------<br>
+1/2 cup dark brown sugar<br>--------------------------------------------------------------------------------<br>
+1/2 cup green onions<br>--------------------------------------------------------------------------------<br>
+salt and pepper to taste
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Place the flank steak and 1/4 cup cornstarch in a resealable plastic bag, shake to coat evenly.
+      <h4>Step 2</h4>
+      Heat the vegetable oil in a large pan over high heat.
+      <h4>Step 3</h4>
+      Add the meat in a single layer and season to taste with salt and pepper (keeping in mind the sauce has plenty of salt in it!). Cook for 3-4 minutes per side or until browned. Cook in multiple batches if needed.
+      <h4>Step 4</h4>
+      Remove the meat from the pan and place on a plate lined with paper towels.
+      <h4>Step 5</h4>
+      Add the garlic and ginger to the pan and cook for 30 seconds. Add the soy sauce, sesame oil, water and brown sugar to the pan and bring to a simmer.
+      <h4>Step 6</h4>
+      Mix the 2 teaspoons of cornstarch with 1 tablespoon of cold water. Add the cornstarch to the sauce and bring to a boil; boil for 30-60 seconds until just thickened.
+      <h4>Step 7</h4>
+      Add the meat and green onions to the pan and toss to coat with the sauce. Serve over rice if desired.
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+.row {
+  margin-left: -325px;
+  margin-top: 30px;
+}
+.box {
+  margin-left: 990px;
+}
+.container {
+  margin-left: -110px;
+}
+h2 span {
+  margin-left: -110px;
+}
+.column {
+  height: 800px;
+}
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 5/4
+  var b = 14/3
+  var c = 3
+  var d = 3/2
+  var e = 1
+  var f =1
+    var g= 1/2
+  var h=1/3
+  var i = 1/2
+  var j = 1/2
+
+
+var se = 4
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+i = (i/ (se/val)).toFixed(2);
+j = (j/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " lbs flank steak thinly sliced<br>--------------------------------------------------------------------------------<br>"
+  + b +" tablespoons cornstarch<br>--------------------------------------------------------------------------------<br>"
+  + c +" tablespoons vegetable oil<br>--------------------------------------------------------------------------------<br>"
+  + d +" teaspoons minced garlic<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoon minced ginger<br>--------------------------------------------------------------------------------<br>"
+  + f +" teaspoon toasted sesame oil<br>--------------------------------------------------------------------------------<br>"
+  + g +" cup low sodium soy sauce<br>--------------------------------------------------------------------------------<br>"
+  + h +" cup water<br>--------------------------------------------------------------------------------<br>"
+  + i +" cup dark brown sugar<br>--------------------------------------------------------------------------------<br>"
+  + j +" cup green onions<br>--------------------------------------------------------------------------------<br>salt and pepper to taste"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(7)) {
+  s.push(7);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

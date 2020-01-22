@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Basil Chicken & Tomatoes</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://www.tasteofhome.com/wp-content/uploads/2017/10/Grilled-Basil-Chicken-and-Tomatoes_EXPS_DSBZ17_37304_B01_19_5b-1-696x696.jpg" alt = "Image" height="auto" width="375">
+  <h2><span>Basil Chicken & Tomatoes</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 177 <br>
+Carbohydrate: 8g <br>
+Cholesterol: 63mg<br>
+Fat: 5g<br>
+Fiber: 1g<br>
+Protein: 24g <br>
+Sodium: 171mg<br>
+Sugars: 7g
+
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 10 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+3/4 cup balsamic vinegar<br>--------------------------------------------------------------------------------<br>
+1/4 cup tightly packed fresh basil leaves<br>--------------------------------------------------------------------------------<br>
+2 tablespoons olive oil<br>--------------------------------------------------------------------------------<br>
+1 garlic clove, minced<br>--------------------------------------------------------------------------------<br>
+1/2 teaspoon salt<br>--------------------------------------------------------------------------------<br>
+8 plum tomatoes<br>--------------------------------------------------------------------------------<br>
+4 boneless skinless chicken breast halves
+</div>
+    </p1>
+</div>
+
+    <div class="column" >
+      <p1>
+
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      For marinade, place first five ingredients in a blender. Cut four tomatoes into quarters and add to blender; cover and process until blended. Halve remaining tomatoes for grilling.
+
+      <h4>Step 2</h4>
+      In a bowl, combine chicken and 2/3 cup marinade; refrigerate, covered, 1 hour, turning occasionally. Reserve remaining marinade for serving.
+
+      <h4>Step 3</h4>
+      Place chicken on an oiled grill rack over medium heat; discard marinade remaining in bowl. Grill chicken, covered, until a thermometer reads 165°, 4-6 minutes per side. Grill tomatoes, covered, over medium heat until lightly browned, 2-4 minutes per side. Serve chicken and tomatoes with reserved marinade.
+    </div>
+
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+<style>
+
+.row {
+  margin-left: -325px;
+}
+
+h2 span {
+  font-size: 35px;
+  position: relative;
+  top: 20px;
+  margin-left: -100px;
+}
+.column {
+  height: 500px;
+}
+.box {
+  margin-left: 905px;
+  margin-top: -380px;
+  height: 375px;
+}
+.container {
+  margin-left: -100px;
+}
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 3/4
+  var b = 1/4
+  var c = 2
+    var d = 1
+  var e = 1/2
+  var f =8
+    var g= 4
+
+
+
+
+var se = 4
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cup balsamic vinegar<br>--------------------------------------------------------------------------------<br>"
+  + b +" cup tightly packed fresh basil leaves<br>--------------------------------------------------------------------------------<br>"
+  + c +" tablespoons olive oil<br>--------------------------------------------------------------------------------<br>"
+  + d +" garlic clove, minced<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoon salt<br>--------------------------------------------------------------------------------<br>"
+  + f +" plum tomatoes<br>--------------------------------------------------------------------------------<br>"
+  + g +" boneless skinless chicken breast halves"
+}
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+
+if (!s.includes(3)) {
+  s.push(3);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

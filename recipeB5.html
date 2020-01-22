@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Oatmeal</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://pickyeaterblog.com/wp-content/uploads/2019/07/Anjali_RR_ChocolateBrownieOatmeal_011.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Oatmeal</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 347 <br>
+Fat: 13 g <br>
+Carbohydrate: 52.7 g<br>
+Protein: 6.5 g <br>
+Cholesterol: 12 mg <br>
+Sodium: 90 mg
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 5 minutes | Cook Time: 10 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+      3 3/4 cups water<br>--------------------------------------------------------------------------------<br>
+      2 cups rolled oats<br>--------------------------------------------------------------------------------<br>
+      1 pinch salt<br>--------------------------------------------------------------------------------<br>
+      4 teaspoons butter<br>--------------------------------------------------------------------------------<br>
+      1/4 cup brown sugar<br>--------------------------------------------------------------------------------<br>
+      1 cup non-dairy creamer<br>--------------------------------------------------------------------------------<br>
+      4 tablespoons milk<br>--------------------------------------------------------------------------------<br>
+      1/4 cup brown sugar
+    </div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      In a medium saucepan, heat water to boiling. Reduce heat to low; stir in oats and salt. Cook until oats have thickened, about 5 minutes.
+
+<h4> Step 2 </h4>
+Place 1 teaspoon of butter and 1 tablespoon of brown sugar in the bottom of each four serving bowls. Spoon oatmeal into each bowl and stir until butter and sugar are melted. Pour 1/4 cup of creamer and 1 tablespoon of milk over each bowl. Top each serving with another tablespoon of brown sugar. Serve hot.
+
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -260px;
+}
+h2 span {
+  margin-left: -260px;
+  font-size: 40px;
+}
+
+.box {
+  margin-left: 900px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 350px;
+}
+
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 15/4
+  var b = 2;
+  var c = 1;
+  var d = 4;
+  var e = 1/4
+  var f =1
+  var g =4
+  var h =1/4
+
+var se = 4;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cups water<br>--------------------------------------------------------------------------------<br>"
+  + b + " cups rolled oats<br>--------------------------------------------------------------------------------<br>"
+  + c + " pinch salt<br>--------------------------------------------------------------------------------<br>"
+  + d + " teaspoons butter<br>--------------------------------------------------------------------------------<br>"
+  + e + " cup brown sugar<br>--------------------------------------------------------------------------------<br>"
+  + f + " cup non-dairy creamer<br>--------------------------------------------------------------------------------<br>"
+  + g + " tablespoons milk<br>--------------------------------------------------------------------------------<br>"
+  + h + " cup brown sugar"
+
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(20)) {
+  s.push(20);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

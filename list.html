@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+  body {
+    background-color:#fff7fe;
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+
+grocery {
+  padding: 0;
+}
+
+grocery li {
+  width: 25%;
+  margin-left: 37.5%;
+  background: #f9f9f9;
+  font-size: 20px;
+  position: relative;
+  padding: 10px 10px 10px 40px;
+  list-style-type: none;
+  font-family: "Muli"
+}
+
+
+grocery li:nth-child(odd) {
+  background: #e1ffff;
+}
+
+grocery li:nth-child(even) {
+  background: #daffff;
+}
+
+/* Darker background-color on hover */
+grocery li:hover {
+  background: #e8edfc;
+}
+
+/* When clicked on, add a background color and strike out text */
+grocery li.checked {
+text-decoration: line-through;
+  background: #dbe4ff;
+  color: #fff;
+}
+
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 16px 14px 16px;
+}
+
+.close:hover {
+  background-color: #ffbdc1;
+  color: #fff;
+}
+
+.top {
+  width: 25%;
+  margin-left: 37.5%;
+  font-size: 20px;
+  font-family: "Muli";
+  background-color: #7f9efa;
+  padding: 10px 40px;
+  color: white;
+  text-align: center;
+
+}
+
+input {
+  font-family: "Muli";
+  font-size: 20px;
+  width: 25%;
+  margin-left: 37.5%;
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+}
+
+</style>
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Muli">
+</head>
+<body>
+
+<div id="di" class="top">
+  <h2 style="margin:5px">Grocery List</h2>
+
+</div>
+
+<grocery id="uu">
+
+</grocery>
+
+<input type="text" id="inp" placeholder = "+ Add Item"></input>
+
+
+
+<script>
+
+  var inp = document.getElementById("inp");
+  inp.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {
+        validate(e);
+    }
+});
+
+
+var nodes = document.getElementsByTagName("LI");
+var j;
+for (j = 0; j < nodes.length; j++) {
+  var text = document.createTextNode("\u00D7");
+  var span = document.createElement("SPAN");
+  span.className = "close";
+  span.appendChild(text);
+  nodes[i].appendChild(span);
+}
+
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+
+var list = document.querySelector('grocery');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function validate(e) {
+
+
+  var li = document.createElement("li");
+  var val = document.getElementById("inp").value;
+  var t = document.createTextNode(val);
+
+  li.appendChild(t);
+
+  if (val === '') {
+    alert("Please write an ingredient!");
+  } else {
+    document.getElementById("uu").appendChild(li);
+  }
+  document.getElementById("inp").value = "";
+
+  var text = document.createTextNode("\u00D7");
+  var span = document.createElement("SPAN");
+
+  span.className = "close";
+  span.appendChild(text);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

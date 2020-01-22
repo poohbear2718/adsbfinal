@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Muli">
+  <style>
+  /* stylizing the webpage and formatting the images */
+
+.indv {
+  left: 88%;
+  position: relative;
+  font-family: "Muli";
+  font-size: 25px;
+
+}
+
+select {
+  background-color: #f3f0ff;
+  padding: 5px 5px 5px 5px;
+  font-family: "Muli";
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+
+  body {
+    background-color: #ebffff;
+  }
+
+  div.gallery {
+
+    margin: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 300px;
+    text-align: center;
+    background-color: #fefaff;
+    font-family: "Muli";
+    font-size: 20px;
+  }
+
+  div.gallery:hover {
+    border: 1px solid #bfc5ff;
+  }
+
+
+  </style>
+
+
+<!-- sorting options + where images will go using a dropdown select menu and div classes-->
+
+    <div class="indv" style="width:200px;">
+
+    <select id = "search" onchange = "change()">
+    <option value="sorted">Random</option>
+    <option value="prep">Prep Time</option>
+    <option value="cook">Cook Time</option>
+    <option value="total">Total Time</option>
+    <option value="ingredients"># of Ingredients</option>
+    <option value="calories">Calories</option>
+
+  </select>
+</div>
+  </head>
+  <body >
+<div class = "wrapper">
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+  <div class = "gallery" name="gallery" id = "gallery"><div name = "desc" class = "desc"></div></div>
+
+
+</div>
+
+
+  </body>
+
+<script>
+
+//dietary needs that work per each recipe in array format
+
+
+var works = [];
+var needs = JSON.parse(localStorage.myArray);
+recipe1Bad = ["vegan", "glutenFree", "ibs", "derm", "diabetes", "hypoglycemia", "kidney", "lowsod", "anemia", "heart", "hyponatremia", "egg", "milk", "wheat"]
+recipe2Bad = ["vegan", "glutenFree", "ibs", "derm", "parkinsons", "kidney", "hbp", "osteoporosis", "lowchol", "lowsod", "anemia", "heart", "egg", "milk"]
+recipe3Bad = ["vegan", "diabetes", "kidney", "lowchol", "anemia", "heart", "hyponatremia", "milk"]
+recipe4Bad = ["vegan", "diabetes", "hypoglycemia", "heart", "hyponatremia", "egg"]
+recipe5Bad = ["vegan", "hyponatremia", "milk"]
+
+//identifying which recipes work for which needs by looping through an array
+
+
+var recipe1 = true;
+for (i=0; i < needs.length; i++) {
+  if (recipe1Bad.includes(needs[i]))
+    recipe1 = false;
+}
+if (recipe1 == true)
+  works.push(1);
+
+
+var recipe2 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe2Bad.includes(needs[i]))
+  recipe2 = false;
+}
+if (recipe2 == true)
+works.push(2);
+
+
+var recipe3 = true;
+for (i=0; i < needs.length; i++) {
+  if (recipe3Bad.includes(needs[i]))
+    recipe3 = false;
+}
+if (recipe3 == true)
+  works.push(3);
+
+var recipe4 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe4Bad.includes(needs[i]))
+  recipe4 = false;
+}
+if (recipe4 == true)
+works.push(4);
+
+
+var recipe5 = true;
+for (i=0; i < needs.length; i++) {
+if (recipe5Bad.includes(needs[i]))
+recipe5 = false;
+}
+if (recipe5 == true)
+works.push(5);
+
+//arrays that hold the urls, links, and descriptions for accessibility
+
+  var imgUrls=[
+    'https://www.biggerbolderbaking.com/wp-content/uploads/2018/02/Best-Ever-French-Toast-9.jpg',
+  'https://www.tastefullysimple.com/_/media/images/recipes/baconandspinachquiche.jpg',
+'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/9/18/0/TJSK_smoothie_s4x3.jpg.rend.hgtvcom.616.462.suffix/1411140884600.jpeg',
+'https://assets.epicurious.com/photos/57ea793acf9338f824b78b3e/2:1/w_1260%2Ch_630/Spiced-Pumpkin-Bread.jpg',
+'https://veggiechick.com/wp-content/uploads/2017/06/Steel_Cut_Oatmeal_Instant_Pot_RECIPE_PHOTO.jpg'  ];
+
+  var recipeArray = ['recipeB1.html', "recipeB2.html", "recipeB3.html", "recipeB4.html", "recipeB5.html"]
+  var descArray = ["French Toast", "Spinach Quiche", "Blueberry Smoothie", "Pumpkin Bread", "Oatmeal"];
+
+
+  //uses DOM to create new elements and place them in the appropriate div classes that were made with HTML using the above arrays for information
+
+  var imgParents=document.getElementsByName("gallery");
+    var imgParentals = document.getElementsByName("desc");
+
+    for(i=0;i<works.length;i++){
+        var a = document.createElement('a');
+        var img = document.createElement("IMG");
+        a.setAttribute('href', recipeArray[works[i]-1]);
+        img.setAttribute('src', imgUrls[works[i]-1]);
+        img.setAttribute('width', '300');
+        img.setAttribute('height', '225');
+        a.appendChild(img);
+        var desc = document.createElement("P");
+        desc.innerText = descArray[works[i]-1];
+        imgParents[i].appendChild(desc);
+        imgParentals[i].appendChild(a);
+
+      }
+
+      for (i=works.length; i < 15; i++) {
+        imgParents[i].style.visibility = "hidden";
+        imgParentals[i].style.visibility = "hidden";
+      }
+
+
+
+
+
+function change() {
+
+
+
+
+ if(document.getElementById('search').value == "prep") {
+
+   //uses a 2d array with prep times and loops through this in order to sort it - then adds the times to a sorted array and displays the images using a similar technique as above
+
+   var prepTimes = [[10, 0], [20, 1], [15, 2], [15, 3], [5, 4]];
+
+      var prep2 = [];
+      for (i=0; i < works.length; i++) {
+        prep2.push(prepTimes[works[i]-1]);
+      }
+      prep2.sort(([a, b], [c, d]) => c - a || b - d);
+      prep2.reverse();
+
+    var arr2 = [];
+    for (y=0; y<prep2.length;y++) {
+      arr2.push(prep2[y][1]);
+    }
+
+
+ var imgParents=document.getElementsByName("gallery");
+  var imgParentals = document.getElementsByName("desc");
+
+
+
+  for(i=0;i<arr2.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr2[i]]);
+      img.setAttribute('src', imgUrls[arr2[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr2[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+  }
+
+
+
+if (document.getElementById('search').value == "cook") {
+
+//similar techinque to prep times but with cook times
+
+  var cookTimes = [[20, 0], [40, 1], [0, 2], [60, 3], [10, 4]];
+
+  var cook2 = [];
+  for (i=0; i < works.length; i++) {
+    cook2.push(cookTimes[works[i]-1]);
+  }
+  cook2.sort(([a, b], [c, d]) => c - a || b - d);
+  cook2.reverse();
+
+  var arr3 = [];
+  for (y=0; y<cook2.length;y++) {
+  arr3.push(cook2[y][1]);
+  }
+
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+
+  for(i=0;i<arr3.length;i++){
+
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr3[i]]);
+      img.setAttribute('src', imgUrls[arr3[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr3[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+
+}
+
+if (document.getElementById('search').value == "total") {
+
+  //similar techinque to prep times but with total times
+
+
+  var totalTimes = [[30, 0], [60, 1], [15, 2], [75, 3], [15, 4]];
+  var tot2 = [];
+  for (i=0; i < works.length; i++) {
+    tot2.push(totalTimes[works[i]-1]);
+  }
+  tot2.sort(([a, b], [c, d]) => c - a || b - d);
+  tot2.reverse();
+
+
+
+  var arr6 = [];
+  for (y=0; y<tot2.length;y++) {
+  arr6.push(tot2[y][1]);
+  }
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+
+  for(i=0;i<arr6.length;i++){
+
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr6[i]]);
+      img.setAttribute('src', imgUrls[arr6[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr6[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+
+}
+
+
+if (document.getElementById('search').value == "ingredients") {
+
+  //similar techinque to prep times but with ingredient times
+
+
+  var ingredients = [[8, 0], [12, 1], [7, 2], [11, 3], [8, 4]];
+  var ing2 = [];
+  for (i=0; i < works.length; i++) {
+    ing2.push(ingredients[works[i]-1]);
+  }
+  ing2.sort(([a, b], [c, d]) => c - a || b - d);
+  ing2.reverse();
+
+  var arr4 = [];
+  for (y=0; y<ing2.length;y++) {
+  arr4.push(ing2[y][1]);
+  }
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+  for(i=0;i<arr4.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr4[i]]);
+      img.setAttribute('src', imgUrls[arr4[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr4[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+
+if (document.getElementById('search').value == "calories") {
+
+  //similar techinque to prep times but with calories
+
+  var calories = [[123, 0], [613, 1], [295, 2], [247, 3], [347, 4]];
+  var cal2 = [];
+  for (i=0; i < works.length; i++) {
+    cal2.push(calories[works[i]-1]);
+  }
+  cal2.sort(([a, b], [c, d]) => c - a || b - d);
+
+  var arr5 = [];
+  for (y=0; y<cal2.length;y++) {
+  arr5.push(cal2[y][1]);
+  }
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+  for(i=0;i<arr5.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[arr5[i]]);
+      img.setAttribute('src', imgUrls[arr5[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[arr5[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+
+if (document.getElementById('search').value == "sorted") {
+
+  //similar techinque to prep time but with the "sorted" version (as in what was originally the order)
+
+
+
+  var imgParents=document.getElementsByName("gallery");
+   var imgParentals = document.getElementsByName("desc");
+
+  for(i=0;i<works.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[works[i]]);
+      img.setAttribute('src', imgUrls[works[i]]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[works[i]];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+
+if (document.getElementById('search').value == "sorted") {
+
+  //similar techinque to prep time but with the "sorted" version (as in what was originally the order)
+
+  for(i=0;i<works.length;i++){
+      var a = document.createElement('a');
+      var img = document.createElement("IMG");
+      a.setAttribute('href', recipeArray[works[i]-1]);
+      img.setAttribute('src', imgUrls[works[i]-1]);
+      img.setAttribute('width', '300');
+      img.setAttribute('height', '225');
+      a.appendChild(img);
+      var desc = document.createElement("P")
+      desc.innerText = descArray[works[i]-1];
+      imgParents[i].removeChild(imgParents[i].childNodes[1]);
+      imgParentals[i].removeChild(imgParentals[i].childNodes[0]);
+
+      imgParents[i].appendChild(desc);
+      imgParentals[i].appendChild(a);
+
+    }
+
+
+
+}
+}
+
+
+</script>
+
+
+
+</html>

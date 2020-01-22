@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Chocolate Pudding</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://thepioneerwoman.com/wp-content/uploads/2016/04/how-to-make-chocolate-pudding-00a.jpg?fit=2000%2C1335" alt = "Image" height="325" width="auto">
+  <h2><span>Chocolate Pudding</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 67 <br>
+Carbohydrate: 53.3 g<br>
+Cholesterol: 0 mg<br>
+Fat: 4.7 g <br>
+Protein: 8.1 g<br>
+Sodium: 97 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 10 minutes | Cook Time: 10 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">2</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+        3 tablespoons cornstarch  <br>--------------------------------------------------------------------------------<br>
+        2 tablespoons water  <br>--------------------------------------------------------------------------------<br>
+        1 1/2 cups soy milk  <br>--------------------------------------------------------------------------------<br>
+        1/4 teaspoon vanilla extract  <br>--------------------------------------------------------------------------------<br>
+        1/4 cup white sugar  <br>--------------------------------------------------------------------------------<br>
+        1/4 cup unsweetened cocoa powder
+
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      In small bowl, combine cornstarch and water to form a paste.
+
+      <h4>Step 2</h4>
+      In large saucepan over medium heat, stir together soy milk, vanilla, sugar, cocoa and cornstarch mixture. Cook, stirring constantly, until mixture boils. Continue to cook and stir until mixture thickens. Remove from heat. Pudding will continue to thicken as it cools. Allow to cool five minutes, then chill in refrigerator until completely cool.
+
+
+      </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 20px;
+}
+
+.container {
+  margin-left: -250px;
+}
+h2 span {
+  margin-left: -250px;
+  font-size: 40px;
+}
+
+.box {
+  margin-left: 60%;
+  padding-left: 15px;
+  height: 325px;
+  margin-top: -325px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 3
+  var b = 2
+  var c = 3/2
+  var d = 1/4
+  var e = 1/4
+  var f =1/4
+
+
+var se = 2;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+
+
+
+
+  document.getElementById("ingr").innerHTML =  a + " tablespoons cornstarch  <br>--------------------------------------------------------------------------------<br>"
++ b +    " tablespoons water  <br>--------------------------------------------------------------------------------<br>"
++ c +    " cups soy milk  <br>--------------------------------------------------------------------------------<br>"
+    + d +" teaspoon vanilla extract  <br>--------------------------------------------------------------------------------<br>"
+    + e +" cup white sugar  <br>--------------------------------------------------------------------------------<br>"
+  + f + " cup unsweetened cocoa powder"
+
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(27)) {
+  s.push(27);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

@@ -1,0 +1,130 @@
+body {
+  background-color: #ebffff;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  height: 620px;
+  /* border: 5px solid pink; */
+  /* background-color: #ffd9d6; */
+}
+
+.info {
+ width: 400px;
+ height: 35px;
+ border: 5px solid pink;
+ margin: -10px;
+}
+
+.row {
+  width:1000px;
+  height:200px;
+  top: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -400px;
+  position: absolute;
+}
+
+.container {
+  margin-left: -250px;
+}
+h1 {
+  font-family: "Candara";
+}
+h3 {
+  font-family: "Candara";
+}
+h4 {
+  font-family: "Candara";
+}
+h5 {
+  font-family: "Candara";
+}
+p1 {
+  font-family: "Candara";
+  font-size: 15px;
+}
+
+p4 {
+  font-family: "Candara";
+  font-size: 15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ /* .container {
+  position: relative;
+}  */
+
+h2 {
+  position: absolute;
+  top: 125px;
+  width: 90%;
+  left: 75px;
+}
+
+h2 span {
+   color: white;
+   font-family: "Candara";
+   font-size: 50px;
+   letter-spacing: -1px;
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.3);
+   padding: 10px;
+   margin-left: -250px;
+
+}
+
+.box {
+  font-family: "Candara";
+  font-size: 20px;
+  color: solid black;
+  margin: 30px;
+  background-color: #d9fafa;
+  border: 1px solid black;
+  opacity: 1;
+  width: 200px;
+  height: 350px;
+  margin-left: 960px;
+  margin-top: -355px;
+  padding-left: 20px;
+}
+
+
+
+.myButton {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #54daff 5%, #91e2ff 100%);
+	background-color:#54daff;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: "Candara";
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+  margin-top: -2%;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #91e2ff 5%, #54daff 100%);
+	background-color:#91e2ff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

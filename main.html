@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- basic buttons that link to other pages -->
+  <div class = "s">
+  <a id = "sources" href = "sources.html"><input type = "button" value = "Sources"></a>
+</div>
+<div class = "l">
+<a id = "list" href = "list.html"><input type = "button" value = "Grocery List"></a>
+</div>
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Muli">
+  <div class = "form">
+  <h1>Recipe Picker</h1>
+  <title>Recipe Picker</title>
+
+</head>
+
+
+<body>
+
+</body>
+
+<form>
+
+
+<!-- form inputs + radio buttons -->
+<div class = "section"><span>1</span>Type of Meal</div>
+<div class = "inner-wrap">
+<label><input type = "radio" name = "meal" value = "breakfast" id = "breakfast">Breakfast</label>
+<label><input type = "radio" name = "meal" value = "lunch" id = "lunch">Lunch</label>
+<label><input type = "radio" name = "meal" value = "dinner" id = "dinner">Dinner</label>
+<label><input type = "radio" name = "meal" value = "dessert" id = "dessert">Dessert</label>
+</div>
+
+
+<div class = "section"><span>2</span>Dietary Needs/Lifestyle</div>
+<div class = "inner-wrap">
+  <label><input type = "checkbox" name = "diet" value = "anemia" id = "anemia">Anemia</label>
+  <label><input type = "checkbox" name = "diet" value = "glutenFree" id = "glutenFree">Celiac Disease / Gluten-Free</label>
+  <label><input type = "checkbox" name = "diet" value = "crohns" id = "crohns">Crohn's Disease</label>
+  <label><input type = "checkbox" name = "diet" value = "derm" id = "derm">Dermatitis Herpetiformis</label>
+  <label><input type = "checkbox" name = "diet" value = "diabetes" id = "diabetes">Diabetes</label>
+  <label><input type = "checkbox" name = "diet" value = "gout" id = "gout">Gout</label>
+  <label><input type = "checkbox" name = "diet" value = "heart" id = "heart">Heart Disease</label>
+  <label><input type = "checkbox" name = "diet" value = "hbp" id = "hbp">High-Blood Pressure / Hypertension</label>
+  <label><input type = "checkbox" name = "diet" value = "hypoglycemia" id = "hypoglycemia">Hypoglycemia</label>
+  <label><input type = "checkbox" name = "diet" value = "hyponatremia" id = "hyponatremia">Hyponatremia</label>
+  <label><input type = "checkbox" name = "diet" value = "ibs" id = "ibs">Irritable Bowel Syndrome</label>
+  <label><input type = "checkbox" name = "diet" value = "kidney" id = "kidney">Kidney Disease</label>
+  <label><input type = "checkbox" name = "diet" value = "lowchol" id = "lowchol">Low-Cholesterol Diet</label>
+  <label><input type = "checkbox" name = "diet" value = "lowsod" id = "lowsod">Low-Sodium Diet / Hypernatremia</label>
+  <label><input type = "checkbox" name = "diet" value = "osteoporosis" id = "osteoporosis">Osteoporosis</label>
+  <label><input type = "checkbox" name = "diet" value = "parkinsons" id = "parkinsons">Parkinson's Disease</label>
+  <label><input type = "checkbox" name = "diet" value = "pescatarian" id = "pescatarian">Pescatarian</label>
+  <label><input type = "checkbox" name = "diet" value = "vegan" id = "vegan">Vegan</label>
+    <label><input type = "checkbox" name = "diet" value = "vegetarian" id = "vegetarian">Vegetarian</label>
+    <label><input type = "checkbox" name = "diet" value = "egg" id = "egg">Egg Allergy</label>
+    <label><input type = "checkbox" name = "diet" value = "fish" id = "fish">Fish Allergy</label>
+    <label><input type = "checkbox" name = "diet" value = "milk" id = "milk">Milk Allergy</label>
+    <label><input type = "checkbox" name = "diet" value = "nut" id = "nut">Nut Allergy</label>
+    <label><input type = "checkbox" name = "diet" value = "soy" id = "soy">Soy Allergy</label>
+    <label><input type = "checkbox" name = "diet" value = "wheat" id = "wheat">Wheat Allegy</label>
+
+</div>
+
+<br><br>
+<a id = "choose" href = "choice.html"><input type = "button" value = "Pick My Recipe!" onClick = "makeArray()" ></a>
+</form>
+
+
+<style type = "text/css">
+
+/* stylizing the form */
+
+input[type = "button"] {
+  font-family: "Muli"
+}
+
+body {
+  background-color: #c9f3ff;
+}
+
+.s {
+  margin-left: 96%;
+}
+
+.l {
+  margin-left: 94%;
+  padding: 5px;
+}
+
+/* used https://www.sanwebe.com/2014/08/css-html-forms-designs for form design */
+
+.form {
+  width: 450px;
+  padding: 30px;
+  margin: 40px auto;
+  background: #FFF;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+.form .inner-wrap {
+  padding: 30px;
+  background: #F8F8F8;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.form h1 {
+  background: #2A88AD;
+  padding: 20px 30px 15px 30px;
+  margin: -30px -30px 30px -30px;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  color: #FFF;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  font: normal 30px;
+  font-family: 'Muli';
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  border: 1px solid #257C9E;
+}
+
+.form h1 > span {
+  display: block;
+  margin-top: 2px;
+  font: 13px;
+  font-family: 'Muli';
+}
+
+.form label {
+  display: block;
+  font: 13px;
+  font-family: 'Muli';
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.form textarea;
+.form select {
+  display: block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100px;
+  padding: 8px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border: 2px solid #FFF;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.form .section {
+  font: normal 20px;
+  font-family: 'Muli';
+  color: #2A88AD;
+  margin-bottom: 5px;
+}
+
+.form .section span {
+  background: #2A88AD;
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 0px solid #FFF;
+  font-size: 14px;
+  margin-left: -45px;
+  color: #FFF;
+  margin-top: -3px;
+}
+
+.form input[type = "text"] {
+  margin-left: -10px;
+  width: 405px;
+  height: 40px;
+  font-size: 15px;
+  font-family: 'Muli';
+}
+
+.form input[type = "button"] {
+  background: #2A88AD;
+  padding: 8px 20px 8px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #FFF;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  font: 30px;
+  font-family: 'Muli';
+  box-shadow: 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  border: 1px solid #257C9E;
+  font-size: 15px;
+}
+
+.form input[type = "submit"]:hover {
+  background: #2A6881;
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+</style>
+
+<script type = "text/javascript">
+
+
+
+var needed = [];
+
+
+//linking to appropriate webpages
+
+function makeArray() {
+  if (document.getElementById("breakfast").checked == true) {
+    document.getElementById("choose").href = "choiceB.html";
+  }
+  if (document.getElementById("dessert").checked == true) {
+    document.getElementById("choose").href = "choiceD.html";
+  }
+  if (document.getElementById("breakfast").checked == false && document.getElementById("lunch").checked == false && document.getElementById("dinner").checked == false && document.getElementById("dessert").checked == false )  {
+    alert("Please choose a meal type.")
+    document.getElementById("choose").href = "";
+  }
+
+  // making array that encompasses their needs based on radio buttons
+
+if (document.getElementById("anemia").checked == true)
+  needed.push("anemia");
+if (document.getElementById("glutenFree").checked == true)
+needed.push("glutenFree");
+if (document.getElementById("crohns").checked == true)
+needed.push("crohns");
+if (document.getElementById("derm").checked == true)
+needed.push("derm");
+if (document.getElementById("diabetes").checked == true)
+needed.push("diabetes");
+if (document.getElementById("gout").checked == true)
+needed.push("gout");
+if (document.getElementById("heart").checked == true)
+needed.push("heart");
+if (document.getElementById("hbp").checked == true)
+needed.push("hbp");
+if (document.getElementById("hypoglycemia").checked == true)
+needed.push("hypoglycemia");
+if (document.getElementById("hyponatremia").checked == true)
+needed.push("hyponatremia");
+if (document.getElementById("ibs").checked == true)
+needed.push("ibs");
+if (document.getElementById("kidney").checked == true)
+needed.push("kidney");
+if (document.getElementById("lowsod").checked == true)
+needed.push("lowsod");
+if (document.getElementById("lowchol").checked == true)
+needed.push("lowchol");
+if (document.getElementById("osteoporosis").checked == true)
+needed.push("osteoporosis");
+if (document.getElementById("parkinsons").checked == true)
+needed.push("parkinsons");
+if (document.getElementById("pescatarian").checked == true)
+needed.push("pescatarian");
+if (document.getElementById("vegan").checked == true)
+needed.push("vegan");
+if (document.getElementById("vegetarian").checked == true)
+needed.push("vegetarian");
+if (document.getElementById("egg").checked == true)
+needed.push("egg");
+if (document.getElementById("fish").checked == true)
+needed.push("fish");
+if (document.getElementById("milk").checked == true)
+needed.push("milk");
+if (document.getElementById("nut").checked == true)
+needed.push("nut");
+if (document.getElementById("soy").checked == true)
+needed.push("soy");
+if (document.getElementById("wheat").checked == true)
+needed.push("wheat");
+
+//identifying meal preference
+
+var result;
+var meal = document.getElementsByName('meal');
+for (i=0; i < meal.length; i++) {
+  if (meal[i].checked == true)
+    result = meal[i].value;
+}
+
+
+
+//storing values to access in other files
+if (!window.localStorage)
+  alert ("Sorry, your browser won't allow this.");
+else {
+  localStorage.myArray = JSON.stringify(needed);
+  localStorage.myVar = JSON.stringify(result);
+  localStorage.setItem('arr', s);
+}
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</html>

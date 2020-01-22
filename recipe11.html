@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Beet Salad with Goat Cheese</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://images.media-allrecipes.com/userphotos/560x315/864231.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Beet Salad with Goat Cheese</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 347<br>
+Carbohydrate: 25 g<br>
+Cholesterol: 7 mg <br>
+Fat: 26.1 g<br>
+Protein: 5.3 g<br>
+Sodium: 107 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 10 minutes | Cook Time: 30 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">6</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+4 medium beets - trimmed, halved<br>--------------------------------------------------------------------------------<br>
+1/3 cup chopped walnuts<br>--------------------------------------------------------------------------------<br>
+3 tablespoons maple syrup<br>--------------------------------------------------------------------------------<br>
+1 10 oz. package mixed baby salad greens<br>--------------------------------------------------------------------------------<br>
+1/2 cup frozen orange juice concentrate<br>--------------------------------------------------------------------------------<br>
+1/4 cup balsamic vinegar<br>--------------------------------------------------------------------------------<br>
+1/2 cup extra-virgin olive oil<br>--------------------------------------------------------------------------------<br>
+2 ounces goat cheese
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Place beets into a saucepan, and fill with enough water to cover. Bring to a boil, then cook for 20 to 30 minutes, until tender. Drain and cool, then cut in to cubes.
+      <h4>Step 2</h4>
+      While the beets are cooking, place the walnuts in a skillet over medium-low heat. Heat until warm and starting to toast, then stir in the maple syrup. Cook and stir until evenly coated, then remove from the heat and set aside to cool.
+      <h4>Step 3</h4>
+      In a small bowl, whisk together the orange juice concentrate, balsamic vinegar and olive oil to make the dressing.
+      <h4>Step 4</h4>
+      Place a large helping of baby greens onto each of four salad plates, divide candied walnuts equally and sprinkle over the greens. Place equal amounts of beets over the greens, and top with dabs of goat cheese. Drizzle each plate with some of the dressing.
+
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+<style>
+.row {
+  margin-left: -375px;
+  margin-top: 30px;
+}
+.container {
+  margin-left: -200px;
+}
+h2 span {
+  margin-left: -200px;
+}
+.box {
+  margin-left: 990px;
+}
+.column {
+  height: 600px;
+}
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 4
+  var b = 1/3
+  var c = 3
+  var d = 1
+  var e = 1/2
+  var f =1/4
+  var g =1/2
+  var h = 2
+
+
+
+var se = 6;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h / (se / val)).toFixed(2);
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " medium beets - trimmed, halved<br>--------------------------------------------------------------------------------<br>"
+ + b + " cup chopped walnuts<br>--------------------------------------------------------------------------------<br>"
+  + c +" tablespoons maple syrup<br>--------------------------------------------------------------------------------<br>"
+  + d +" 10 oz. package mixed baby salad greens<br>--------------------------------------------------------------------------------<br>"
+  + e +" cup frozen orange juice concentrate<br>--------------------------------------------------------------------------------<br>"
+  + f +" cup balsamic vinegar<br>--------------------------------------------------------------------------------<br>"
+  + g +" cup extra-virgin olive oil<br>--------------------------------------------------------------------------------<br>"
+  + h +" ounces goat cheese"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(11)) {
+  s.push(11);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

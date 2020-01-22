@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Vegetable Korma</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://thewanderlustkitchen.com/wp-content/uploads/2016/10/indian-vegetable-korma-recipe-5-720x540.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Vegetable Korma</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 462<br>
+Carbohydrate: 41.3 g<br>
+Cholesterol: 82 mg <br>
+Fat: 31.1 g<br>
+Protein: 8.6 g<br>
+Sodium: 1434 mg
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 25 minutes | Cook Time: 30 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">4</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+1 1/2 tablespoons vegetable oil<br>--------------------------------------------------------------------------------<br>
+1 small onion, diced<br>--------------------------------------------------------------------------------<br>
+1 teaspoon ginger root, minced<br>--------------------------------------------------------------------------------<br>
+4 cloves garlic, minced<br>--------------------------------------------------------------------------------<br>
+2 potatoes, cubed<br>--------------------------------------------------------------------------------<br>
+4 carrots, cubed<br>--------------------------------------------------------------------------------<br>
+1 jalapeno pepper, seeded and sliced<br>--------------------------------------------------------------------------------<br>
+3 tablespoons ground unsalted cashews<br>--------------------------------------------------------------------------------<br>
+1 (4 ounce) can tomato sauce<br>--------------------------------------------------------------------------------<br>
+2 teaspoons salt<br>--------------------------------------------------------------------------------<br>
+1 1/2 tablespoons curry powder<br>--------------------------------------------------------------------------------<br>
+1 cup frozen green peas<br>--------------------------------------------------------------------------------<br>
+1/2 green bell pepper, chopped<br>--------------------------------------------------------------------------------<br>
+1/2 red bell pepper, chopped<br>--------------------------------------------------------------------------------<br>
+1 cup heavy cream<br>--------------------------------------------------------------------------------<br>
+1 bunch fresh cilantro
+
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Heat the oil in a skillet over medium heat. Stir in the onion, and cook until tender. Mix in ginger and garlic, and continue cooking 1 minute. Mix potatoes, carrots, jalapeno, cashews, and tomato sauce. Season with salt and curry powder. Cook and stir 10 minutes, or until potatoes are tender.
+      <h4>Step 2</h4>
+      Stir peas, green bell pepper, red bell pepper, and cream into the skillet. Reduce heat to low, cover, and simmer 10 minutes. Garnish with cilantro to serve.
+
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+.row {
+  margin-left: -375px;
+  margin-top: 30px;
+}
+.container {
+  margin-left: -200px;
+}
+h2 span {
+  margin-left: -200px;
+}
+.box {
+  margin-left: 910px;
+}
+.column {
+  height: 700px;
+}
+</style>
+
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 3/2
+  var b = 1
+  var c = 1
+  var d = 4;
+  var e = 2
+  var f =4
+  var g =1
+  var h = 3
+  var i = 1
+  var j = 2
+  var k = 3/2
+  var l = 1
+  var m = 1/2
+  var n = 1/2
+  var o = 1
+  var p = 1
+
+
+var se = 4;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h / (se / val)).toFixed(2);
+i = (i / (se / val)).toFixed(2);
+j = (j / (se / val)).toFixed(2);
+k = (k / (se / val)).toFixed(2);
+l = (l / (se / val)).toFixed(2);
+m = (m / (se / val)).toFixed(2);
+n = (n / (se / val)).toFixed(2);
+o = (o / (se / val)).toFixed(2);
+p = (p / (se / val)).toFixed(2);
+
+  document.getElementById("ingr").innerHTML =
+  a + " tablespoons vegetable oil<br>--------------------------------------------------------------------------------<br>"
+  + b +" small onion, diced<br>--------------------------------------------------------------------------------<br>"
+  + c +" teaspoon ginger root, minced<br>--------------------------------------------------------------------------------<br>"
+  + d +" cloves garlic, minced<br>--------------------------------------------------------------------------------<br>"
+  + e +" potatoes, cubed<br>--------------------------------------------------------------------------------<br>"
+  + f +" carrots, cubed<br>--------------------------------------------------------------------------------<br>"
+  + g +" jalapeno pepper, seeded and sliced<br>--------------------------------------------------------------------------------<br>"
+  + h +" tablespoons ground unsalted cashews<br>--------------------------------------------------------------------------------<br>"
+  + i +" (4 ounce) can tomato sauce<br>--------------------------------------------------------------------------------<br>"
+  + j +" teaspoons salt<br>--------------------------------------------------------------------------------<br>"
+  + k +" 1/2 tablespoons curry powder<br>--------------------------------------------------------------------------------<br>"
+  + l +" cup frozen green peas<br>--------------------------------------------------------------------------------<br>"
+  + m +" green bell pepper, chopped<br>--------------------------------------------------------------------------------<br>"
+  + n +" red bell pepper, chopped<br>--------------------------------------------------------------------------------<br>"
+  + o +" cup heavy cream<br>--------------------------------------------------------------------------------<br>"
+  + p +" bunch fresh cilantro"
+
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(14)) {
+  s.push(14);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

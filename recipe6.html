@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Chicken Asparagus Pasta</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://tastesbetterfromscratch.com/wp-content/uploads/2018/01/Creamy-Chicken-Asparagus-Pasta-5.jpg" alt = "Image" height="auto" width="250">
+  <h2><span>Chicken Asparagus Pasta</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 332<br>
+Carbohydrate: 43.3 g<br>
+Cholesterol: 20 mg<br>
+Fat: 10.9 g<br>
+Protein: 16.7 g <br>
+Sodium: 69 mg
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 20 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">8</textarea> </p4>
+</div>
+</center>
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+<p1>
+  <div id = "ingr">
+
+1 16 oz package dried penne pasta<br>--------------------------------------------------------------------------------<br>
+5 tablespoons olive oil, divided<br>--------------------------------------------------------------------------------<br>
+2 skinless, boneless chicken breast halves<br>--------------------------------------------------------------------------------<br>
+1/2 cup low-sodium chicken broth<br>--------------------------------------------------------------------------------<br>
+1 bunch slender asparagus spears, trimmed<br>--------------------------------------------------------------------------------<br>
+1 clove garlic, thinly sliced<br>--------------------------------------------------------------------------------<br>
+1/4 cup Parmesan cheese<br>--------------------------------------------------------------------------------<br>
+salt and pepper to taste<br>--------------------------------------------------------------------------------<br>
+garlic powder to taste
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Bring a large pot of lightly salted water to boil. Add pasta, and cook until al dente, about 8 to 10 minutes. Drain, and set aside.
+
+      <h4>Step 2</h4>
+      Warm 3 tablespoons olive oil in a large skillet over medium-high heat. Stir in chicken, and season with salt, pepper, and garlic powder. Cook until chicken is cooked through and browned, about 5 minutes. Remove chicken to paper towels.
+
+      <h4>Step 3</h4>
+      Pour chicken broth into the skillet. Then stir in asparagus, garlic, and a pinch more garlic powder, salt, and pepper. Cover, and steam until the asparagus is just tender, about 5 to 10 minutes. Return chicken to the skillet, and warm through.
+
+      <h4>Step 4</h4>
+      Stir chicken mixture into pasta, and mix well. Let sit about 5 minutes. Drizzle with 2 tablespoons olive oil, stir again, then sprinkle with Parmesan cheese.
+
+        </p1>
+    </div>
+  </div>
+
+</body>
+
+<style>
+.row {
+  margin-left: -325px;
+}
+
+h2 span {
+  font-size: 24px;
+  position: relative;
+  top: 20px;
+  margin-left: -110px;
+}
+
+.column {
+  height: 600px;
+}
+
+.container {
+  margin-left: -110px;
+}
+
+.box {
+  margin-left: 840px;
+  margin-top: -380px;
+  height: 375px;
+  padding-left: 15px;
+}
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1
+  var b = 5
+  var c = 2
+  var d = 1/2
+  var e = 1
+  var f =1
+    var g= 1/4
+
+
+
+var se = 8
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+g = (g/ (se/val)).toFixed(2);
+
+
+
+  document.getElementById("ingr").innerHTML =
+
+  a + " 16 oz package dried penne pasta<br>--------------------------------------------------------------------------------<br>"
+  + b +" tablespoons olive oil, divided<br>--------------------------------------------------------------------------------<br>"
+  + c +" skinless, boneless chicken breast halves<br>--------------------------------------------------------------------------------<br>"
+  + d +" cup low-sodium chicken broth<br>--------------------------------------------------------------------------------<br>"
+  + e +" bunch slender asparagus spears, trimmed<br>--------------------------------------------------------------------------------<br>"
+  + f +" clove garlic, thinly sliced<br>--------------------------------------------------------------------------------<br>"
+  + g +" cup Parmesan cheese<br>--------------------------------------------------------------------------------<br>salt and pepper to taste<br>--------------------------------------------------------------------------------<br>garlic powder to taste"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(6)) {
+  s.push(6);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Carrot Cake</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2007/2/16/0/ry0401_carrotcake.jpg.rend.hgtvcom.826.620.suffix/1552488933139.jpeg" alt = "Image" height="325" width="auto">
+  <h2><span>Carrot Cake</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 167 <br>
+Carbohydrate: 34.1 g<br>
+Cholesterol: 1 mg<br>
+Fat: 2.4 g<br>
+Protein: 3.9 g<br>
+Sodium: 171 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 20 minutes | Cook Time: 40 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">18</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+          6 egg whites<br>--------------------------------------------------------------------------------<br>
+          1 1/3 cups white sugar<br>--------------------------------------------------------------------------------<br>
+          1 cup applesauce<br>--------------------------------------------------------------------------------<br>
+          1/2 cup skim milk<br>--------------------------------------------------------------------------------<br>
+          1 1/2 teaspoons vanilla extract<br>--------------------------------------------------------------------------------<br>
+          1/4 teaspoon ground cloves<br>--------------------------------------------------------------------------------<br>
+          1/2 teaspoon ground nutmeg<br>--------------------------------------------------------------------------------<br>
+          1 tablespoon ground cinnamon<br>--------------------------------------------------------------------------------<br>
+          2 teaspoons baking soda<br>--------------------------------------------------------------------------------<br>
+          1 cup whole wheat flour<br>--------------------------------------------------------------------------------<br>
+          1 cup all-purpose flour<br>--------------------------------------------------------------------------------<br>
+          1 can crushed pineapple<br>--------------------------------------------------------------------------------<br>
+          2 cups shredded carrots<br>--------------------------------------------------------------------------------<br>
+          1/2 cup chopped walnuts<br>--------------------------------------------------------------------------------<br>
+          1/2 cup raisins
+
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Preheat oven to 350 degrees F (175 degrees C). Lightly grease a 9X13 inch pan with non-fat cooking spray.
+
+      <h4>Step 2</h4>
+      In large mixing bowl, beat egg whites. Slowly beat in sugar, then applesauce, skim milk, and vanilla. Stir in cloves, nutmeg, cinnamon, baking soda, and flour. Stir in, one ingredient at a time, pineapple (with juice), carrots, walnuts, and raisins. Pour into the prepared pan.
+
+      <h4>Step 3</h4>
+      Bake for 35 - 40 minutes in the preheated oven. It is done when toothpick inserted in center comes out clean.
+
+      </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 20px;
+}
+
+.container {
+  margin-left: -250px;
+}
+h2 span {
+  margin-left: -250px;
+  font-size: 40px;
+}
+
+.box {
+  margin-left: 58%;
+  padding-left: 15px;
+  height: 325px;
+  margin-top: -325px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 6
+  var b = 4/3
+  var c = 1
+  var d = 1/2
+  var e = 3/2
+  var f =1/4
+  var g =1/2
+  var h = 1
+  var i = 2
+  var j = 1
+  var k = 1
+  var l = 1
+  var m = 2
+  var n = 1/2
+  var o = 1/2
+
+var se = 18;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h / (se / val)).toFixed(2);
+i = (i / (se / val)).toFixed(2);
+j = (j / (se / val)).toFixed(2);
+k = (k / (se / val)).toFixed(2);
+l = (l / (se / val)).toFixed(2);
+m = (m / (se / val)).toFixed(2);
+n = (n / (se / val)).toFixed(2);
+o = (o / (se / val)).toFixed(2);
+
+
+
+  document.getElementById("ingr").innerHTML = a + " egg whites<br>--------------------------------------------------------------------------------<br>"
+  + b + " cups white sugar<br>--------------------------------------------------------------------------------<br>"
+  + c + " cup applesauce<br>--------------------------------------------------------------------------------<br>"
+  + d + " cup skim milk<br>--------------------------------------------------------------------------------<br>"
+  + e + " teaspoons vanilla extract<br>--------------------------------------------------------------------------------<br>"
+  + f + " teaspoon ground cloves<br>--------------------------------------------------------------------------------<br>"
+  + g + " teaspoon ground nutmeg<br>--------------------------------------------------------------------------------<br>"
+  + h + " tablespoon ground cinnamon<br>--------------------------------------------------------------------------------<br>"
+  + i + " teaspoons baking soda<br>--------------------------------------------------------------------------------<br>"
+  + j + " cup whole wheat flour<br>--------------------------------------------------------------------------------<br>"
+  + k + " cup all-purpose flour<br>--------------------------------------------------------------------------------<br>"
+  + l + " can crushed pineapple<br>--------------------------------------------------------------------------------<br>"
+  + m + " cup chopped walnuts<br>--------------------------------------------------------------------------------<br>"
+  + n + " cups shredded carrots<br>--------------------------------------------------------------------------------<br>"
+  + o + " cup raisins"
+
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(26)) {
+  s.push(26);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

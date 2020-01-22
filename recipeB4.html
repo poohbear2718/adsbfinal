@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Pumpkin Bread</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pumpkin-bread-horizontal-1529354841.png?crop=1xw:0.7496251874062968xh;center,top&resize=1200:*" alt = "Image" height="325" width="auto">
+  <h2><span>Pumpkin Bread</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 247<br>
+Carbohydrate: 36.8 g<br>
+Cholesterol: 31 mg<br>
+Fat: 10.3 g<br>
+Protein: 3 g <br>
+Sodium: 231 mg
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 60 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">36</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+        3 cups canned pumpkin puree<br>--------------------------------------------------------------------------------<br>
+        1 1/2 cups vegetable oil<br>--------------------------------------------------------------------------------<br>
+        4 cups white sugar<br>--------------------------------------------------------------------------------<br>
+        6 eggs<br>--------------------------------------------------------------------------------<br>
+        4 3/4 cups all-purpose flour<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons baking powder<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons baking soda<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons salt<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons ground cinnamon<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons ground nutmeg<br>--------------------------------------------------------------------------------<br>
+        1 1/2 teaspoons ground cloves
+      </div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Preheat the oven to 350 degrees F (175 degrees C). Grease and flour three 9x5 inch loaf pans.
+
+      <h4>Step 2</h4>
+      In a large bowl, mix together the pumpkin, oil, sugar, and eggs. Combine the flour, baking powder, baking soda, salt, cinnamon, nutmeg, and cloves; stir into the pumpkin mixture until well blended. Divide the batter evenly between the prepared pans.
+
+      <h4>Step 3</h4>
+      Bake in preheated oven for 45 minutes to 1 hour. The top of the loaf should spring back when lightly pressed.
+
+
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -220px;
+}
+h2 span {
+  margin-left: -190px;
+}
+
+.box {
+  margin-left: 990px;
+  padding-left: 15px;
+  height: 325px;
+  margin-top: -325px;
+}
+
+.column {
+  height: 500px;
+}
+
+
+
+</style>
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 3
+  var b = 3/2;
+  var c = 4
+  var d = 6;
+  var e = 19/4
+  var f =3/2
+  var g =3/2
+  var h =3/2
+  var i = 3/2
+  var j = 3/2
+  var k = 3/2
+
+var se = 36;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+i = (i/ (se/val)).toFixed(2);
+j = (j / (se / val)).toFixed(2);
+k = (k/ (se/val)).toFixed(2);
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cups canned pumpkin puree<br>--------------------------------------------------------------------------------<br>"
+  + b +" cups vegetable oil<br>--------------------------------------------------------------------------------<br>"
+  + c +" cups white sugar<br>--------------------------------------------------------------------------------<br>"
+  + d +" eggs<br>--------------------------------------------------------------------------------<br>"
+  + e +" cups all-purpose flour<br>--------------------------------------------------------------------------------<br>"
+  + f +" teaspoons baking powder<br>--------------------------------------------------------------------------------<br>"
+  + g +" teaspoons baking soda<br>--------------------------------------------------------------------------------<br>"
+  + h +" teaspoons salt<br>--------------------------------------------------------------------------------<br>"
+  + i +" teaspoons ground cinnamon<br>--------------------------------------------------------------------------------<br>"
+  + j +" teaspoons ground nutmeg<br>--------------------------------------------------------------------------------<br>"
+  + k +" teaspoons ground cloves"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(19)) {
+  s.push(19);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

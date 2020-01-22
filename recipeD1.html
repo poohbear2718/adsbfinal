@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Vanilla Cupcakes</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://cookiesandcups.com/wp-content/uploads/2013/05/vanillacupcakes-5.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Vanilla Cupcakes</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 152<br>
+Fat: 6.4 g <br>
+Carbohydrate: 22.6 g<br>
+Protein: 1.5 g<br>
+Cholesterol: 0 mg <br>
+Sodium: 167 mg
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 10 minutes | Cook Time: 15 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">18</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+1 tablespoon apple cider vinegar<br>--------------------------------------------------------------------------------<br>
+1 1/2 cups almond milk<br>--------------------------------------------------------------------------------<br>
+2 cups all-purpose flour<br>--------------------------------------------------------------------------------<br>
+1 cup white sugar<br>--------------------------------------------------------------------------------<br>
+2 teaspoons baking powder<br>--------------------------------------------------------------------------------<br>
+1/2 teaspoon baking soda<br>--------------------------------------------------------------------------------<br>
+1/2 teaspoon salt<br>--------------------------------------------------------------------------------<br>
+1/2 cup coconut oil, warmed<br>--------------------------------------------------------------------------------<br>
+1 1/4 teaspoons vanilla extract
+</div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Preheat oven to 350 degrees F (175 degrees C). Grease two 12 cup muffin pans or line with 18 paper baking cups.
+
+      <h4>Step 2</h4>
+      Measure the apple cider vinegar into a 2 cup measuring cup. Fill with almond milk to make 1 1/2 cups. Let stand until curdled, about 5 minutes. In a large bowl, Whisk together the flour, sugar, baking powder, baking soda and salt. In a separate bowl, whisk together the almond milk mixture, coconut oil and vanilla. Pour the wet ingredients into the dry ingredients and stir just until blended. Spoon the batter into the prepared cups, dividing evenly.
+
+      <h4>Step 3</h4>
+      Bake in the preheated oven until the tops spring back when lightly pressed, 15 to 20 minutes. Cool in the pan set over a wire rack. When cool, arrange the cupcakes on a serving platter. Frost with desired frosting.
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -210px;
+}
+h2 span {
+  margin-left: -210px;
+}
+
+.box {
+  margin-left: 945px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 400px;
+}
+
+
+
+</style>
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1
+  var b = 3/2;
+  var c = 2;
+  var d = 1;
+  var e = 2
+  var f =1/2
+  var g =1/2
+  var h =1/2
+  var i =5/4
+
+var se = 18;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+h = (h/ (se/val)).toFixed(2);
+i = (i/ (se/val)).toFixed(2);
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " tablespoon apple cider vinegar<br>--------------------------------------------------------------------------------<br>"
+  + b + " cups almond milk<br>--------------------------------------------------------------------------------<br>"
+  + c + " cups all-purpose flour<br>--------------------------------------------------------------------------------<br>"
+  + d + " cup white sugar<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoons baking powder<br>--------------------------------------------------------------------------------<br>"
+  + f + " teaspoon baking soda<br>--------------------------------------------------------------------------------<br>"
+  + g + " teaspoon salt<br>--------------------------------------------------------------------------------<br>"
+  + h + " cup coconut oil, warmed<br>--------------------------------------------------------------------------------<br>"
+  + i + " teaspoons vanilla extract"
+
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(21)) {
+  s.push(21);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>

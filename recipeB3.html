@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Blueberry Smoothie</title>
+  <link rel = "stylesheet" type = "text/css" href = "recipeStyle.css">
+  <div class = "container">
+  <center><img src = "https://healthynibblesandbits.com/wp-content/uploads/2018/08/Blueberry-Smoothie-FF.jpg" alt = "Image" height="350" width="auto">
+  <h2><span>Blueberry Smoothie</span></h2> </center>
+</div>
+<div class = "box">
+  <img src = "whiteheart.png" width = "50" height = "auto" onclick = "myFunction()" id = "im" class = "imag">
+  <a href="saved.html" class="myButton" width = "20" height = "auto">Saved Recipes</a>
+<b>Nutrition Facts</b>
+Calories: 295<br>
+Fat: 10.6 g<br>
+Carbohydrate: 44.9 g<br>
+Protein: 7.5 g <br>
+Cholesterol: 22 mg <br>
+Sodium: 69 mg
+
+</div>
+</head>
+
+<div class = "total">
+<body>
+
+
+
+  <center>
+  <div class = "info">
+  <p4>Prep Time: 15 minutes | Cook Time: 0 minutes | Serves: <textarea id = "txt" rows = "1" cols = "2" onChange = "checkit();">1</textarea> </p4>
+</div>
+</center>
+
+
+  <div class="row">
+    <div class="column" >
+      <h3>Ingredients</h3>
+      <p1>
+        <div id = "ingr">
+
+      1 cup fresh blueberries<br>--------------------------------------------------------------------------------<br>
+      1/2 cup Greek yogurt<br>--------------------------------------------------------------------------------<br>
+      1/4 cup orange juice<br>--------------------------------------------------------------------------------<br>
+      1 tablespoon white sugar<br>--------------------------------------------------------------------------------<br>
+      1/4 teaspoon vanilla extract<br>--------------------------------------------------------------------------------<br>
+      1 pinch ground cinnamon<br>--------------------------------------------------------------------------------<br>
+      3 ice cubes
+    </div>
+
+    </p1>
+    </div>
+
+    <div class="column" >
+      <p1>
+      <h3>Directions</h3>
+      <h4>Step 1</h4>
+      Blend blueberries, yogurt, orange juice, sugar, vanilla extract, and cinnamon together in a blender on low speed for 30 seconds; increase speed to high and blend until smooth, about 2 minutes. Add ice and blend on high until smooth, about 1 minute more.
+
+    </p1>
+    </div>
+  </div>
+
+</body>
+
+
+<style>
+
+.row {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: -340px;
+}
+h2 span {
+  margin-left: -340px;
+  font-size: 40px;
+}
+
+.box {
+  margin-left: 790px;
+  padding-left: 15px;
+}
+
+.column {
+  height: 350px;
+}
+
+
+</style>
+
+
+<script type = "text/javascript">
+
+function checkit() {
+
+  var a = 1
+  var b = 3/2;
+  var c = 1/4
+  var d = 1;
+  var e = 1/4
+  var f =1
+  var g =3
+
+
+var se = 1;
+
+  var val = document.getElementById('txt').value;
+a = (a / (se / val)).toFixed(2);
+b = (b/ (se/val)).toFixed(2);
+c = (c/ (se/val)).toFixed(2);
+d = (d / (se / val)).toFixed(2);
+f = (f/ (se/val)).toFixed(2);
+e = (e/ (se/val)).toFixed(2);
+g = (g / (se / val)).toFixed(2);
+
+
+
+
+  document.getElementById("ingr").innerHTML =
+  a + " cup fresh blueberries<br>--------------------------------------------------------------------------------<br>"
+  + b +" cup Greek yogurt<br>--------------------------------------------------------------------------------<br>"
+  + c +" cup orange juice<br>--------------------------------------------------------------------------------<br>"
+  + d +" tablespoon white sugar<br>--------------------------------------------------------------------------------<br>"
+  + e +" teaspoon vanilla extract<br>--------------------------------------------------------------------------------<br>"
+  + f +" pinch ground cinnamon<br>--------------------------------------------------------------------------------<br>"
+  + g +" ice cubes"
+}
+
+function myFunction() {
+
+document.getElementById('im').src = "redheart.png";
+
+var s = [];
+s = JSON.parse(localStorage.getItem('arr')) || [];
+if (!s.includes(18)) {
+  s.push(18);
+  localStorage.setItem('arr', JSON.stringify(s));
+}
+}
+
+</script>
+
+</html>
